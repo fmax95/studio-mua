@@ -1,0 +1,50 @@
+---
+import { string } from "astro:schema";
+import logo from "../assets/logo.svg";
+const logoSize = (times = 1) => {
+  const w = 115;
+  const h = 48;
+  return { width: w * times, height: h * times };
+};
+
+const url: Record<string, string> = {
+  homepage: "/",
+  graphicDesigner: "/graphic-designer",
+  contentCreator: "/content-creator",
+  socialMediaManager: "/social-media-manager",
+};
+---
+
+<div class="navbar-container">
+  <div class="upper">
+    <a href="/"
+      ><img
+        src={logo.src}
+        width={logoSize().width}
+        height={logoSize().height}
+        alt="Studio Mua Homepage"
+      /></a
+    >
+  </div>
+  <div class="lower">
+    <nav>
+      <ul>
+        <li><a href={url.homepage}>Homepage</a></li>
+        <li><a href={url.graphicDesigner}>Graphic Designer</a></li>
+        <li><a href={url.contentCreator}>Content Creator</a></li>
+        <li><a href={url.socialMediaManager}>Social Media Manager</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .navbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+</style>

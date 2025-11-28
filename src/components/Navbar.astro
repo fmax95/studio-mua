@@ -13,15 +13,13 @@ const url: Record<string, string> = {
   contentCreator: "/studio-mua/content-creator",
   socialMediaManager: "/studio-mua/social-media-manager",
 };
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <div class="navbar-container">
   <div class="upper">
     <a href={url.homepage}
       ><img
-        src={`${base}logo.svg`}
+        src="/studio-mua/logo.svg"
         width={logoSize().width}
         height={logoSize().height}
         alt="Studio Mua Homepage"

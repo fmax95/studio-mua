@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -11,6 +13,8 @@ import Layout from "../layouts/Layout.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Studio Mua | Content Creator</title>
   </head>
+  <Navbar />
+  <Header />
   <Layout>
     <main>
       <h1>Content Creator</h1>

@@ -26,25 +26,198 @@ const url: Record<string, string> = {
       /></a
     >
   </div>
-  <div class="lower">
-    <nav>
-      <ul>
-        <li><a href={url.homepage}>Homepage</a></li>
-        <li><a href={url.graphicDesigner}>Graphic Designer</a></li>
-        <li><a href={url.contentCreator}>Content Creator</a></li>
-        <li><a href={url.socialMediaManager}>Social Media Manager</a></li>
-      </ul>
-    </nav>
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="links-container" id="navLinks">
+    <a class="nav-item" href={url.homepage} data-page="homepage"
+      ><button>Homepage</button></a
+    >
+    <a class="nav-item" href={url.graphicDesigner} data-page="graphic-designer">
+      <button>Graphic Designer</button></a
+    >
+    <a class="nav-item" href={url.contentCreator} data-page="content-creator">
+      <button>Content Creator</button></a
+    >
+    <a
+      class="nav-item"
+      href={url.socialMediaManager}
+      data-page="social-media-manager"
+    >
+      <button>Social Media Manager</button></a
+    >
   </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navLinks = document.getElementById("navLinks");
+
+    burgerMenu?.addEventListener("click", () => {
+      burgerMenu.classList.toggle("active");
+      navLinks?.classList.toggle("active");
+    });
+
+    // Evidenzia la voce di menu della pagina corrente
+    const currentPath = window.location.pathname;
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach((item) => {
+      const href = item.getAttribute("href");
+      if (href && currentPath === href) {
+        item.classList.add("active-page");
+      }
+    });
+  });
+</script>
+
 <style>
   .navbar-container {
+    background-color: var(--brown);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 3px;
     border-bottom: 1px solid #e0e0e0;
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      transform 0.2s;
+  }
+
+  .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .nav-item:active {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(0);
+  }
+
+  .nav-item.active-page {
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    border-bottom: 3px solid var(--white);
+  }
+
+  .nav-item.active-page button {
+    font-weight: 900;
+  }
+
+  .links-container button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .nav-item:hover button {
+    color: var(--white);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-item:active button {
+    transform: scale(0.98);
+  }
+
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+  }
+
+  .burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .burger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  @media (max-width: 720px) {
+    .navbar-container {
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .burger-menu {
+      display: flex;
+    }
+
+    .links-container {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      width: 250px;
+      height: calc(100vh - 60px);
+      background-color: var(--brown);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .links-container.active {
+      right: 0;
+    }
+
+    .nav-item {
+      margin: 10px 0;
+      width: 100%;
+    }
+
+    .links-container button {
+      text-align: left;
+      width: 100%;
+      padding: 10px;
+    }
   }
 </style>

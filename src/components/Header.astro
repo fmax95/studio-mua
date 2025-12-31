@@ -1,0 +1,190 @@
+---
+import SvgIpad from "./SvgIpad.astro";
+import SvgAsh from "./SvgAsh.astro";
+---
+
+<div class="header">
+  <SvgIpad x="0%" y="50px" rotateDeg={16} zIndex={0} class="svg-ipad-desktop" />
+  <SvgAsh x="85%" y="250px" zIndex={0} class="svg-ash-desktop" />
+  <SvgAsh x="75%" y="130px" zIndex={0} class="svg-ash-mobile" />
+
+  <div class="header-content">
+    <h2>Lorem ipsum dolor sit amet</h2>
+    <h1>Your Marketing should feel <br /> seamless, stress-free & simple</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+<div class="message-loop">
+  <div class="loop-content">
+    <span>Marketing is more than just an Instagram post</span>
+    <span>Marketing is more than just an Instagram post</span>
+    <span>Marketing is more than just an Instagram post</span>
+  </div>
+</div>
+
+<style>
+  .header {
+    background-color: var(--blue);
+    padding: 40px 0 20px 0;
+    text-align: center;
+    color: var(--brown);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  p {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+  .svg-ipad-mobile,
+  .svg-ash-mobile {
+    display: none;
+  }
+
+  h2 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--brown);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: var(--brown);
+  }
+
+  h1 br {
+    display: block;
+  }
+
+  p {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: var(--brown);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .message-loop {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .loop-content {
+    display: inline-block;
+    animation: scroll 25s linear infinite;
+  }
+
+  .loop-content span {
+    display: inline-block;
+    padding: 0 50px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .message-loop h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  @media (max-width: 720px) {
+    .header {
+      padding: 20px 15px 0;
+    }
+    h1 br {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    .message-loop {
+      padding: 12px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header {
+      padding: 15px 0 10px 0;
+    }
+
+    .svg-ipad-desktop,
+    .svg-ash-desktop {
+      display: none;
+    }
+
+    .svg-ipad-mobile,
+    .svg-ash-mobile {
+      display: block;
+    }
+
+    .svg-ipad-mobile {
+      width: 90px !important;
+    }
+
+    .svg-ash-mobile {
+    }
+
+    .svg-ash {
+      left: 75% !important;
+      top: 130px !important;
+      width: 60px !important;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+  }
+</style>

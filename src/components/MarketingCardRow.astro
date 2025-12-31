@@ -1,0 +1,46 @@
+---
+import MarketingCard from "./MarketingCard.astro";
+export type Props = { class?: string };
+const { class: className } = Astro.props;
+---
+
+<section class={`row ${className ?? ""}`}>
+  <MarketingCard
+    title="The Icebreaker"
+    subtitle="Strategy • Concept"
+    cta="Lorem Ipsum"
+    href="/studio-mua/graphic-designer"
+  />
+  <MarketingCard
+    title="The Party Starter"
+    subtitle="Planning • Launch"
+    cta="Lorem Ipsum"
+    href="/studio-mua/content-creator"
+  />
+  <MarketingCard
+    title="The Vault"
+    subtitle="Done-for-you"
+    cta="Lorem Ipsum"
+    href="/studio-mua/social-media-manager"
+  />
+</section>
+
+<style>
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Sotto 720px: 1 colonna */
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 0 20px;
+    }
+  }
+</style>

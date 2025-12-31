@@ -1,0 +1,103 @@
+---
+import SvgAsh from "./SvgAsh.astro";
+import SvgSwirl from "./SvgSwirl.astro";
+
+const logoSize = (times = 1) => {
+  const w = 115;
+  const h = 48;
+  return { width: w * times, height: h * times };
+};
+
+const url: Record<string, string> = {
+  homepage: "/studio-mua/",
+  graphicDesigner: "/studio-mua/graphic-designer",
+  contentCreator: "/studio-mua/content-creator",
+  socialMediaManager: "/studio-mua/social-media-manager",
+  contactUs: "mailto:info@studiomua.com",
+};
+---
+
+<footer class="footer-container">
+  <SvgSwirl x="65%" y="-20%" zIndex={2} width="50px" />
+  <SvgAsh x="30%" y="70%" rotateDeg={-15} zIndex={0} width="150px" />
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href={url.homepage}>
+        <img
+          src="/studio-mua/logo.svg"
+          width={logoSize().width}
+          height={logoSize().height}
+          alt="Studio Mua"
+        />
+      </a>
+    </div>
+    <nav class="footer-links">
+      <a href={url.homepage}>Homepage</a>
+      <a href={url.graphicDesigner}>Graphic Designer</a>
+      <a href={url.contentCreator}>Content Creator</a>
+      <a href={url.socialMediaManager}>Social Media Manager</a>
+      <a href={url.contactUs}>Contact Us</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer-container {
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 30px 40px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo img {
+    display: block;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+
+  .footer-links a:hover {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+
+  @media (max-width: 720px) {
+    .footer-container {
+      padding: 20px;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 25px;
+      text-align: center;
+    }
+
+    .footer-links {
+      align-items: center;
+      gap: 15px;
+    }
+  }
+</style>

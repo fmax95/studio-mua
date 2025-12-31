@@ -1,0 +1,64 @@
+---
+// AbsoluteSvg.astro
+export type Props = {
+  x?: number | string; // es: 120 oppure "2rem" oppure "10%"
+  y?: number | string; // es: 80 oppure "1.5rem"
+  width?: number | string; // es: 300 oppure "12rem" (se non passi nulla usa quello dell'svg)
+  height?: number | string; // es: 300 oppure "12rem"
+  zIndex?: number;
+  rotateDeg?: number; // opzionale
+  class?: string;
+  style?: string;
+  ariaLabel?: string;
+};
+
+const {
+  x = 0,
+  y = 0,
+  width,
+  height,
+  zIndex = 1,
+  rotateDeg = 0,
+  class: className,
+  style,
+  ariaLabel = "Decorative SVG",
+} = Astro.props;
+
+const toCss = (v: number | string) => (typeof v === "number" ? `${v}px` : v);
+
+const inlineStyle = [
+  "position:absolute",
+  `left:${toCss(x)}`,
+  `top:${toCss(y)}`,
+  `z-index:${zIndex}`,
+  rotateDeg ? `transform:rotate(${rotateDeg}deg)` : "",
+  width != null ? `width:${toCss(width)}` : "",
+  height != null ? `height:${toCss(height)}` : "",
+  style ?? "",
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<div class={className} style={inlineStyle} aria-label={ariaLabel} role="img">
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    viewBox="0 0 32.767 35.733"
+    preserveAspectRatio="xMidYMid meet"
+    role="img"
+    aria-label="Blue swirl"
+  >
+    <path
+      fill="#a9bee3"
+      transform="translate(-618.033 -19.800)"
+      d="M650.35,27.36c-7.17-9.36-20.93-10.46-28.5-.8s-3.23,23.68,7.74,27.98c10.09,3.95,23.31-4.12,20.71-15.81-2.09-9.41-16.61-15.38-21.72-4.9-2.06,4.22-.29,10.26,4.4,11.85,4.66,1.57,9.83-2.87,6.68-7.46-1.67-2.43-5.66-.13-3.98,2.33-2.48.31-3.6-.73-3.38-3.12l1.36-2.81c1.44-1.52,4.08-1.98,6.03-1.51,3.8.9,6.57,5.1,6.29,8.92-.66,8.83-11.34,11.04-17.57,6.66s-7.68-14.36-2.2-20.17,15.15-5.39,20.17,1.17c1.78,2.32,5.78.03,3.98-2.33h0Z"
+    ></path>
+  </svg>
+</div>

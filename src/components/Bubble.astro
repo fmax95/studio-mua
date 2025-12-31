@@ -1,0 +1,65 @@
+---
+const {
+  waveHeight = 100, // altezza fascia onda (un po’ più alta)
+  radius = 18,
+  paddingX = 22,
+  paddingTop = 48,
+  paddingBottom = 0,
+} = Astro.props;
+---
+
+<div
+  class="bubble"
+  style={`
+    --waveH: ${waveHeight}px;
+    --r: ${radius}px;
+    --px: ${paddingX}px;
+    --pt: ${paddingTop}px;
+    --pb: ${paddingBottom}px;
+  `}
+>
+  <div class="bubble__content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .bubble {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: var(--white, #fbf6e2);
+    color: var(--black, #141105);
+
+    padding: var(--pt) var(--px) calc(var(--pb) + var(--waveH));
+    border-radius: var(--r);
+
+    --rect-mask: linear-gradient(#fff 0 0);
+
+    /* Onde più profonde: la “linea base” sta più su (y=58) e i picchi vanno a 100 */
+    --wave-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0 0H1000V58C875 58 875 100 750 100C625 100 625 58 500 58C375 58 375 100 250 100C125 100 125 58 0 58Z'/%3E%3C/svg%3E");
+
+    -webkit-mask-image: var(--rect-mask), var(--wave-mask);
+    mask-image: var(--rect-mask), var(--wave-mask);
+
+    -webkit-mask-size:
+      100% calc(100% - var(--waveH)),
+      100% var(--waveH);
+    mask-size:
+      100% calc(100% - var(--waveH)),
+      100% var(--waveH);
+
+    -webkit-mask-position: top, bottom;
+    mask-position: top, bottom;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  .bubble__content {
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+</style>

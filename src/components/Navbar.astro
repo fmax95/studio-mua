@@ -80,12 +80,13 @@ const url: Record<string, string> = {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
+    padding: 3px 0;
     border-bottom: 1px solid #e0e0e0;
     color: var(--white);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
   }
 
   .links-container {
@@ -149,15 +150,15 @@ const url: Record<string, string> = {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 25px;
+    width: 35px;
+    height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 5px;
     z-index: 1001;
     position: absolute;
-    right: 20px;
+    right: 40px;
   }
 
   .burger-menu span {
@@ -183,11 +184,16 @@ const url: Record<string, string> = {
   @media (max-width: 720px) {
     .navbar-container {
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 10px 15px;
+    }
+
+    .upper {
+      z-index: 1002;
     }
 
     .burger-menu {
       display: flex;
+      right: 40px;
     }
 
     .links-container {

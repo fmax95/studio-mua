@@ -1,0 +1,99 @@
+/* ================================================
+   STUDIO MUA - Global Styles
+   Google Fonts: Fraunces, Inter, Allura
+   ================================================ */
+
+:root {
+  /* Color Palette */
+  --brown: #4b3821;
+  --blue: #abbfe2;
+  --white: #fef6c7;
+  --black: #141105;
+  --pink: #ebc7dc;
+
+  /* Font Families */
+  --font-title: "Fraunces", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-script: "Allura", cursive;
+
+  /* Typography Scale - Fluid Responsive */
+  --fs-body: clamp(16px, 0.35vw + 15px, 18px);
+  --fs-eyebrow: clamp(14px, 0.3vw + 13px, 18px);
+  --fs-h3: clamp(20px, 1.0vw + 16px, 34px);
+  --fs-h2: clamp(26px, 1.8vw + 18px, 46px);
+  --fs-h1: clamp(36px, 3.2vw + 18px, 66px);
+}
+
+/* ================================================
+   Base Typography
+   ================================================ */
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+}
+
+/* Strong/Bold elements */
+strong,
+b {
+  font-weight: 600;
+}
+
+/* ================================================
+   Headings - Fraunces
+   ================================================ */
+
+h1,
+h2,
+h3,
+.title,
+.heading {
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.18;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+}
+
+/* ================================================
+   Script/Decorative Text - Allura
+   ================================================ */
+
+.script,
+.accent-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(0.05em);
+}
+
+/* ================================================
+   Utility Classes
+   ================================================ */
+
+p {
+  margin: 0 0 1em;
+}
+
+* {
+  box-sizing: border-box;
+}

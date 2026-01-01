@@ -1,23 +1,11 @@
 ---
 import Header from "../components/Header.astro";
-import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Studio Mua | Content Creator</title>
-  </head>
-  <Navbar />
+<Layout title="Studio Mua | Content Creator">
   <Header />
-  <Layout>
-    <main>
-      <h1>Content Creator</h1>
-    </main>
-  </Layout>
-</html>
+  <main>
+    <h1>Content Creator</h1>
+  </main>
+</Layout>

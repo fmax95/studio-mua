@@ -1,17 +1,23 @@
 ---
 import SvgIpad from "./SvgIpad.astro";
 import SvgAsh from "./SvgAsh.astro";
+import SvgSwirl from "./SvgSwirl.astro";
 ---
 
 <div class="header">
-  <SvgIpad x="0%" y="50px" rotateDeg={16} zIndex={0} class="svg-ipad-desktop" />
+  <div class="container-svg-ipad">
+    <SvgIpad x="0%" y="50px" rotateDeg={16} zIndex={0} />
+  </div>
+  <SvgSwirl x="0%" y="50px" zIndex={0} />
   <SvgAsh x="85%" y="250px" zIndex={0} class="svg-ash-desktop" />
   <SvgAsh x="75%" y="130px" zIndex={0} class="svg-ash-mobile" />
 
   <div class="header-content">
-    <h2>Lorem ipsum dolor sit amet</h2>
-    <h1>Your Marketing should feel <br /> seamless, stress-free & simple</h1>
-    <p>
+    <h2 class="blurred-text">Lorem ipsum dolor sit amet</h2>
+    <h1 class="blurred-text">
+      Your Marketing should feel <br /> seamless, stress-free & simple
+    </h1>
+    <p class="blurred-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
     </p>
@@ -27,7 +33,7 @@ import SvgAsh from "./SvgAsh.astro";
 
 <style>
   .header {
-    background-color: var(--blue);
+    background-color: var(--pink);
     padding: 40px 0 20px 0;
     text-align: center;
     color: var(--brown);
@@ -48,11 +54,6 @@ import SvgAsh from "./SvgAsh.astro";
     position: relative;
     z-index: 1;
     margin: 0 auto;
-  }
-
-  .svg-ipad-mobile,
-  .svg-ash-mobile {
-    display: none;
   }
 
   h2 {
@@ -146,8 +147,18 @@ import SvgAsh from "./SvgAsh.astro";
     .message-loop {
       padding: 12px 0;
     }
+
+    .container-svg-ipad {
+      display: none;
+    }
   }
 
+  .blurred-text {
+    background-color: rgba(171, 191, 226, 0.01);
+    padding: 12px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+  }
   @media (max-width: 480px) {
     .header {
       padding: 15px 0 10px 0;

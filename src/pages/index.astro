@@ -7,6 +7,7 @@ import SvgSmartphone from "../components/SvgSmartphone.astro";
 import MarketingCardRow from "../components/MarketingCardRow.astro";
 import SvgSwosh from "../components/SvgSwosh.astro";
 import SvgAsh from "../components/SvgAsh.astro";
+import SvgGirl from "../components/SvgGirl.astro";
 ---
 
 <!doctype html>
@@ -39,7 +40,6 @@ import SvgAsh from "../components/SvgAsh.astro";
         <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
         <SvgAsh x="1%" y="60%" rotateDeg={-10} zIndex={0} />
 
-
         <h1 class="text-block-title">Welcome to Studio Mua</h1>
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
@@ -58,17 +58,25 @@ import SvgAsh from "../components/SvgAsh.astro";
           amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </p>
-        <p class="text-block">
+        <p class="text-block text-block-bottom">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
           amet, consectetur adipiscing elit.
         </p>
       </div>
       <div class="cards-container">
+        <div class="girl-mobile">
+          <SvgGirl x="5%" y="-15%" rotateDeg={0} zIndex={0} />
+        </div>
+        <div class="girl-desktop">
+          <SvgGirl x="5%" y="-25%" rotateDeg={0} zIndex={0} />
+        </div>
         <h2 class="cards-title">
           Go from post & ghost to <br />content that just (gets) clicks
         </h2>
-        <MarketingCardRow />
+        <div class="card-row-container">
+          <MarketingCardRow />
+        </div>
       </div>
     </main>
   </Layout>
@@ -78,21 +86,54 @@ import SvgAsh from "../components/SvgAsh.astro";
   :root {
     --brown: #4b3821;
     --blue: #abbfe2;
-    --white: #fbf6e2;
+    --white: #fef6c7;
     --black: #141105;
+    --pink: #ebc7dc;
+
+    /* Typography Scale */
+    --fs-body: clamp(16px, 0.35vw + 15px, 18px);
+    --fs-eyebrow: clamp(14px, 0.3vw + 13px, 18px);
+    --fs-h3: clamp(20px, 1.2vw + 16px, 32px);
+    --fs-h2: clamp(26px, 2vw + 18px, 44px);
+    --fs-h1: clamp(34px, 3.6vw + 18px, 64px);
+  }
+
+  body {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: var(--fs-h1);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: var(--fs-h3);
+    line-height: 1.25;
   }
 
   .cards-container {
     margin-top: 100px;
     text-align: center;
     padding-bottom: 100px;
+    position: relative;
   }
 
   .cards-title {
-    font-size: 2rem;
     color: var(--brown);
     position: relative;
     z-index: 1;
+  }
+
+  .card-row-container {
+    position: relative;
+    z-index: 2;
   }
 
   .text-container {
@@ -101,16 +142,20 @@ import SvgAsh from "../components/SvgAsh.astro";
     padding: 0 20px;
     position: relative;
   }
+
   .text-block-title {
-    font-size: 2.5rem;
     color: var(--white);
     margin-bottom: 20px;
     text-align: center;
     position: relative;
     z-index: 1;
+       background-color: rgba(171, 191, 226, 0.10);
+      padding: 12px 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
   }
+
   .text-block {
-    font-size: 1.2rem;
     color: var(--white);
     line-height: 1.6;
     margin-bottom: 15px;
@@ -125,5 +170,42 @@ import SvgAsh from "../components/SvgAsh.astro";
     margin-left: auto;
     margin-right: auto;
     padding: 0 16px;
+  }
+
+  .girl-mobile {
+    display: none;
+  }
+
+  /* Mobile: aggiungi background semi-trasparente per leggibilità */
+  @media (max-width: 720px) {
+    .text-block-title {
+      background-color: rgba(171, 191, 226, 0.75);
+      padding: 12px 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    .girl-desktop {
+      display: none;
+    }
+
+    .girl-mobile {
+      display: block;
+    }
+
+    /* .text-block-bottom {
+      background-color: rgba(171, 191, 226, 0.2);
+      padding: 10px 16px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    } */
+
+    .cards-title {
+      background-color: rgba(171, 191, 226, 0.75);
+      padding: 12px 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      display: inline-block;
+    }
   }
 </style>

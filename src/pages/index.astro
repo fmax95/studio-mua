@@ -11,66 +11,65 @@ import SvgGirl from "../components/SvgGirl.astro";
 
 <Layout title="Studio Mua | Homepage">
   <Header />
-    <main>
-      <div class="bubble-container">
-        <Bubble>
-          Your feed is full of brands trying to sell you something &amp; your
-          inbox is packed with emails you keep meaning to unsubscribe from...
-        </Bubble>
-      </div>
-      <div class="text-container">
-        <SvgSmartphone x="0%" y="-35%" rotateDeg={16} zIndex={0} />
-        <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
-        <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
-        <SvgAsh x="80%" y="60%" rotateDeg={-10} zIndex={0} />
-        <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
-        <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
-        <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
-        <SvgAsh x="1%" y="60%" rotateDeg={-10} zIndex={0} />
+  <main>
+    <div class="bubble-container">
+      <Bubble>
+        Your feed is full of brands trying to sell you something &amp; your
+        inbox is packed with emails you keep meaning to unsubscribe from...
+      </Bubble>
+    </div>
+    <div class="text-container">
+      <SvgSmartphone x="0%" y="-35%" rotateDeg={16} zIndex={0} />
+      <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
+      <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
+      <SvgAsh x="80%" y="60%" rotateDeg={-10} zIndex={0} />
+      <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
+      <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
+      <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
+      <SvgAsh x="1%" y="60%" rotateDeg={-10} zIndex={0} />
 
-        <h1 class="text-block-title">Welcome to Studio Mua</h1>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit.
-        </p>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit.
-        </p>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit.
-        </p>
-        <p class="text-block text-block-bottom">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit.
-        </p>
+      <h1 class="text-block-title">Welcome to Studio Mua</h1>
+      <p class="text-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit.
+      </p>
+      <p class="text-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+      <p class="text-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit.
+      </p>
+      <p class="text-block text-block-bottom">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+    </div>
+    <div class="cards-container">
+      <div class="girl-mobile">
+        <SvgGirl x="5%" y="-15%" rotateDeg={0} zIndex={0} />
       </div>
-      <div class="cards-container">
-        <div class="girl-mobile">
-          <SvgGirl x="5%" y="-15%" rotateDeg={0} zIndex={0} />
-        </div>
-        <div class="girl-desktop">
-          <SvgGirl x="5%" y="-25%" rotateDeg={0} zIndex={0} />
-        </div>
-        <h2 class="cards-title">
-          Go from post & ghost to <br />content that just (gets) clicks
-        </h2>
-        <div class="card-row-container">
-          <MarketingCardRow />
-        </div>
+      <div class="girl-desktop">
+        <SvgGirl x="5%" y="-25%" rotateDeg={0} zIndex={0} />
       </div>
-    </main>
+      <h2 class="cards-title">
+        Go from post & ghost to <br />content that just (gets) clicks
+      </h2>
+      <div class="card-row-container">
+        <MarketingCardRow />
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
-
   .cards-container {
     margin-top: 100px;
     text-align: center;
@@ -82,6 +81,7 @@ import SvgGirl from "../components/SvgGirl.astro";
     color: var(--brown);
     position: relative;
     z-index: 1;
+    margin-bottom: 50px;
   }
 
   .card-row-container {
@@ -102,10 +102,10 @@ import SvgGirl from "../components/SvgGirl.astro";
     text-align: center;
     position: relative;
     z-index: 1;
-       background-color: rgba(171, 191, 226, 0.10);
-      padding: 12px 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
+    background-color: rgba(171, 191, 226, 0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
   }
 
   .text-block {

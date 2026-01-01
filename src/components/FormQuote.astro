@@ -1,47 +1,73 @@
 <div class="form-container">
- <form
-  action="https://docs.google.com/forms/d/e/1FAIpQLSd3GKK8GNrrVo8-6tLUEMpk6QNgZf-3igQP8Je6hDgqrQQ4TA/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="submitted=true;"
->
+  <form
+    id="contact-form"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSd3GKK8GNrrVo8-6tLUEMpk6QNgZf-3igQP8Je6hDgqrQQ4TA/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted=true;"
+  >
+    <div>
+      <label for="nome">Nome</label><br />
+      <input
+        type="text"
+        id="nome"
+        name="entry.1422895890"
+        placeholder="Il tuo nome"
+        required
+      />
+    </div>
 
-  <div>
-    <label for="nome">Nome</label><br />
-    <input
-      type="text"
-      id="nome"
-      name="entry.1422895890"
-      placeholder="Il tuo nome"
-      required
-    />
-  </div>
+    <div>
+      <label for="email">Email</label><br />
+      <input
+        type="email"
+        id="email"
+        name="entry.1016161758"
+        placeholder="La tua email"
+        required
+      />
+    </div>
 
-  <div>
-    <label for="email">Email</label><br />
-    <input
-      type="email"
-      id="email"
-      name="entry.1016161758"
-      placeholder="La tua email"
-      required
-    />
-  </div>
+    <div>
+      <label for="messaggio">Messaggio</label><br />
+      <textarea
+        id="messaggio"
+        name="entry.1797226606"
+        placeholder="Scrivi il tuo messaggio"
+        rows="5"
+        required
+      ></textarea>
+    </div>
 
-  <div>
-    <label for="messaggio">Messaggio</label><br />
-    <textarea
-      id="messaggio"
-      name="entry.1797226606"
-      placeholder="Scrivi il tuo messaggio"
-      rows="5"
-      required
-    ></textarea>
-  </div>
+    <button type="submit">Invia</button>
+  </form>
 
-  <button type="submit">Invia</button>
-</form
+  <!-- Messaggio di successo -->
+  <p id="success-message" class="success-message">
+    Grazie! Il tuo messaggio è stato inviato correttamente.
+  </p>
+
+  <!-- iframe tecnico nascosto -->
+  <iframe
+    name="hidden_iframe"
+    style="display:none;"
+    onload="if (submitted) showSuccessMessage();"
+  ></iframe>
 </div>
+
+<script>
+  let submitted = false;
+
+  function showSuccessMessage() {
+    submitted = false;
+
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.reset();
+    successMessage.style.display = 'block';
+  }
+</script>
 
 <style>
   .form-container {
@@ -51,5 +77,16 @@
     background-color: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #e6f7e6;
+    color: #1e7a1e;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
   }
 </style>

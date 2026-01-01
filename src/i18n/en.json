@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Homepage",
+    "contentCreator": "Content Creator",
+    "graphicDesigner": "Graphic Designer",
+    "socialMediaManager": "Social Media Manager"
+  },
+  "home": {
+    "title": "Welcome",
+    "description": "Your creative design studio"
+  },
+  "contentCreator": {
+    "title": "Content Creator",
+    "description": "Professional services for content creators"
+  },
+  "graphicDesigner": {
+    "title": "Graphic Designer",
+    "description": "Creative graphic design solutions"
+  },
+  "socialMediaManager": {
+    "title": "Social Media Manager",
+    "description": "Professional social media management"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "switch": "Change language",
+    "italian": "Italiano",
+    "english": "English"
+  }
+}

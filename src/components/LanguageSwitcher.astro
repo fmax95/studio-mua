@@ -1,0 +1,63 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale = Astro.currentLocale || 'it';
+const currentPath = Astro.url.pathname;
+
+// Rimuove il prefisso /en/ se presente
+const basePath = currentPath.replace(/^\/en/, '');
+
+// URL per le due lingue
+const itUrl = basePath || '/';
+const enUrl = getRelativeLocaleUrl('en', basePath || '/');
+---
+
+<div class="language-switcher">
+  <a 
+    href={itUrl} 
+    class:list={['lang-link', { active: currentLocale === 'it' }]}
+    aria-label="Italiano"
+  >
+    IT
+  </a>
+  <span class="separator">|</span>
+  <a 
+    href={enUrl} 
+    class:list={['lang-link', { active: currentLocale === 'en' }]}
+    aria-label="English"
+  >
+    EN
+  </a>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .lang-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .lang-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .lang-link.active {
+    color: var(--blue);
+    background-color: rgba(135, 165, 225, 0.15);
+  }
+
+  .separator {
+    color: var(--brown);
+    opacity: 0.3;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import { string } from "astro:schema";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const logoSize = (times = 1) => {
   const w = 115;
@@ -7,12 +8,19 @@ const logoSize = (times = 1) => {
   return { width: w * times, height: h * times };
 };
 
+const currentLocale = Astro.currentLocale || 'it';
+const baseUrl = currentLocale === 'en' ? '/en' : '';
+
 const url: Record<string, string> = {
-  homepage: "/",
-  graphicDesigner: "/graphic-designer",
-  contentCreator: "/content-creator",
-  socialMediaManager: "/social-media-manager",
+  homepage: `${baseUrl}/`,
+  graphicDesigner: `${baseUrl}/graphic-designer`,
+  contentCreator: `${baseUrl}/content-creator`,
+  socialMediaManager: `${baseUrl}/social-media-manager`,
 };
+
+// Importa le traduzioni
+const translations = await import(`../i18n/${currentLocale}.json`);
+const t = translations.default;
 ---
 
 <div class="navbar-container">
@@ -33,21 +41,24 @@ const url: Record<string, string> = {
   </button>
   <div class="links-container" id="navLinks">
     <a class="nav-item" href={url.homepage} data-page="homepage"
-      ><button>Homepage</button></a
+      ><button>{t.nav.home}</button></a
     >
     <a class="nav-item" href={url.graphicDesigner} data-page="graphic-designer">
-      <button>Graphic Designer</button></a
+      <button>{t.nav.graphicDesigner}</button></a
     >
     <a class="nav-item" href={url.contentCreator} data-page="content-creator">
-      <button>Content Creator</button></a
+      <button>{t.nav.contentCreator}</button></a
     >
     <a
       class="nav-item"
       href={url.socialMediaManager}
       data-page="social-media-manager"
     >
-      <button>Social Media Manager</button></a
+      <button>{t.nav.socialMediaManager}</button></a
     >
+    <div class="language-switcher-nav">
+      <LanguageSwitcher />
+    </div>
   </div>
 </div>
 
@@ -146,6 +157,12 @@ const url: Record<string, string> = {
     transform: scale(0.98);
   }
 
+  .language-switcher-nav {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
   .burger-menu {
     display: none;
     flex-direction: column;
@@ -224,6 +241,16 @@ const url: Record<string, string> = {
       text-align: left;
       width: 100%;
       padding: 10px;
+    }
+
+    .language-switcher-nav {
+      margin-left: 0;
+      margin-top: 20px;
+      padding-left: 0;
+      padding-top: 20px;
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
     }
   }
 </style>

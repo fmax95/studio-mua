@@ -8,8 +8,8 @@ const logoSize = (times = 1) => {
   return { width: w * times, height: h * times };
 };
 
-const currentLocale = Astro.currentLocale || 'it';
-const baseUrl = currentLocale === 'en' ? '/en' : '';
+const currentLocale = Astro.currentLocale || "it";
+const baseUrl = currentLocale === "en" ? "/en" : "";
 
 const url: Record<string, string> = {
   homepage: `${baseUrl}/`,
@@ -87,13 +87,13 @@ const t = translations.default;
 
 <style>
   .navbar-container {
-    background-color: var(--brown);
+    background-color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3px 0;
     border-bottom: 1px solid #e0e0e0;
-    color: var(--white);
+    color: var(--brown);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -108,7 +108,7 @@ const t = translations.default;
   }
 
   .nav-item {
-    color: var(--white);
+    color: var(--brown);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -132,7 +132,7 @@ const t = translations.default;
 
   .nav-item.active-page {
     /* background-color: rgba(255, 255, 255, 0.3); */
-    border-bottom: 3px solid var(--white);
+    border-bottom: 3px solid var(--brown);
   }
 
   .nav-item.active-page button {
@@ -142,14 +142,14 @@ const t = translations.default;
   .links-container button {
     background: none;
     border: none;
-    color: var(--white);
+    color: var(--brown);
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
   }
 
   .nav-item:hover button {
-    color: var(--white);
+    color: var(--brown);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   }
 
@@ -181,7 +181,7 @@ const t = translations.default;
   .burger-menu span {
     width: 30px;
     height: 3px;
-    background-color: var(--white);
+    background-color: var(--brown);
     border-radius: 2px;
     transition: all 0.3s ease;
   }
@@ -219,7 +219,7 @@ const t = translations.default;
       right: -100%;
       width: 250px;
       height: calc(100vh - 60px);
-      background-color: var(--brown);
+      background-color: var(--white);
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;

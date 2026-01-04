@@ -26,31 +26,43 @@ const {
 
   <p class="card__body">{body}</p>
 
-  {href ? (
-    <a href={href} class="card__cta">
-      {cta}
-    </a>
-  ) : (
-    <button class="card__cta" type="button">
-      {cta}
-    </button>
-  )}
+  {
+    href ? (
+      <a href={href} class="card__cta">
+        {cta}
+      </a>
+    ) : (
+      <button class="card__cta" type="button">
+        {cta}
+      </button>
+    )
+  }
 </article>
 
 <style>
   .card {
     width: 100%;
+    height: 350px;
     box-sizing: border-box;
-    background: var(--white);
+    background: var(--blue-light);
     color: var(--black);
     border: 3px solid var(--brown);
     border-radius: 18px;
-    padding: 18px 18px 16px;
+    padding: 18px;
+    padding-top: 50px;
     box-shadow: 0 10px 0 rgba(75, 56, 33, 0.22);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
     text-align: center;
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .card__subtitle {
@@ -63,7 +75,7 @@ const {
   }
 
   .card__title {
-    margin: 6px 0 0;
+    margin: 0;
     font-size: 22px;
     line-height: 1.05;
     font-weight: 800;
@@ -76,26 +88,32 @@ const {
     line-height: 1.35;
     color: var(--black);
     opacity: 0.9;
+    flex: 1;
+    display: flex;
+    align-items: center;
   }
 
   .card__cta {
-    margin-top: 2px;
-    align-self: center;
-    background: var(--brown);
-    color: var(--white);
-    border: 2px solid var(--brown);
+    margin-top: auto;
+    background: var(--white);
+    color: var(--brown);
     border-radius: 999px;
-    padding: 10px 14px;
+    padding: 10px 24px;
     font-weight: 800;
     letter-spacing: 0.6px;
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    cursor: pointer;
   }
 
   .card__cta:hover {
-    filter: brightness(1.05);
+    background: var(--blue);
+    color: var(--brown);
   }
 
   .card__cta:active {

@@ -1,0 +1,78 @@
+---
+// AbsoluteSvg.astro
+export type Props = {
+  x?: number | string; // es: 120 oppure "2rem" oppure "10%"
+  y?: number | string; // es: 80 oppure "1.5rem"
+  width?: number | string; // es: 300 oppure "12rem" (se non passi nulla usa quello dell'svg)
+  height?: number | string; // es: 300 oppure "12rem"
+  zIndex?: number;
+  rotateDeg?: number; // opzionale
+  class?: string;
+  style?: string;
+  ariaLabel?: string;
+};
+
+const {
+  x = 0,
+  y = 0,
+  width,
+  height,
+  zIndex = 1,
+  rotateDeg = 0,
+  class: className,
+  style,
+  ariaLabel = "Decorative SVG",
+} = Astro.props;
+
+const toCss = (v: number | string) => (typeof v === "number" ? `${v}px` : v);
+
+const inlineStyle = [
+  "position:absolute",
+  `left:${toCss(x)}`,
+  `top:${toCss(y)}`,
+  `z-index:${zIndex}`,
+  rotateDeg ? `transform:rotate(${rotateDeg}deg)` : "",
+  width != null ? `width:${toCss(width)}` : "",
+  height != null ? `height:${toCss(height)}` : "",
+  style ?? "",
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<div class={className} style={inlineStyle} aria-label={ariaLabel} role="img">
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <!--?xml version="1.0" encoding="UTF-8"?-->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="120"
+    height="220"
+    viewBox="0 0 200 320"
+    role="img"
+    aria-label="Curved arrow with attached triangle head"
+  >
+    <!-- Body -->
+    <path
+      d="M120 26
+       C 70 26, 65 90, 120 110
+       C 170 128, 165 190, 120 210
+       C 80 226, 92 265, 120 286
+       L 120 298"
+      fill="none"
+      stroke="#4b3821"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+
+    <!-- Head (closed triangle), slightly overlapping the body so it's attached -->
+    <path d="M120 318
+       L 132 292
+       L 108 292
+       Z" fill="#4b3821"
+    ></path>
+  </svg>
+</div>

@@ -1,0 +1,224 @@
+---
+import SvgArrow from "./SvgArrow.astro";
+import SvgAsh from "./SvgAsh.astro";
+
+export type Props = {
+  title?: string;
+  subtitle?: string;
+  body?: string;
+  cta?: string;
+  href?: string;
+  class?: string;
+};
+
+const {
+  title = "Heya, I'm a Lorem!",
+  subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  cta = "Contact Me",
+  href = "mailto:studiomua@yahoo.com ",
+} = Astro.props;
+---
+
+<article>
+  <div class="photo-section-container">
+    <SvgAsh x="60%" y="-1%" rotateDeg={15} zIndex={0} />
+    <SvgAsh x="80%" y="80%" rotateDeg={15} zIndex={0} />
+
+    <div class="left-col">
+      <div class="arrow-container">
+        <SvgArrow
+          x="80%"
+          y="20%"
+          width={150}
+          height={300}
+          rotateDeg={10}
+          zIndex={3}
+        />
+      </div>
+      <div class="polaroid">
+        <img src="https://picsum.photos/500" alt="photo-me" />
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="text-content">
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        <p>{body}</p>
+        {
+          href ? (
+            <a href={href} class="cta-button">
+              {cta}
+            </a>
+          ) : null
+        }
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .photo-section-container {
+      display: flex;
+      width: 100%;
+      height: 800px;
+      background-color: var(--blue);
+      margin-top: 250px;
+      position: relative;
+    }
+    .left-col {
+      flex: 1;
+      background-color: var(--blue);
+      position: relative;
+    }
+    .right-col {
+      flex: 1;
+      background-color: var(--blue);
+    }
+
+    .polaroid {
+      position: absolute;
+      border: 10px solid var(--white);
+      padding-bottom: 70px;
+      background-color: var(--white);
+      transform: translate(-50%, -50%) rotate(-10deg);
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+    .polaroid img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .text-content {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 30px;
+      color: var(--brown);
+    }
+
+    .text-content h2 {
+      z-index: 1;
+    }
+
+    .text-content h3 {
+      z-index: 1;
+    }
+
+    .text-content p {
+      z-index: 1;
+    }
+
+    .arrow-container {
+      position: absolute;
+      right: 20%;
+      top: -10%;
+      z-index: 3;
+      width: 150px;
+      height: 300px;
+      transform: translate(13%, 0) rotate(30deg);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--white);
+      color: var(--brown);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    .cta-button:hover {
+      background-color: var(--brown);
+      color: var(--white);
+    }
+
+    @media (max-width: 1200px) {
+      .photo-section-container {
+        height: 700px;
+      }
+
+      .polaroid {
+        width: 400px;
+        padding-bottom: 60px;
+      }
+
+      .polaroid img {
+        height: 400px;
+      }
+
+      .text-content {
+        padding: 40px;
+        gap: 20px;
+      }
+
+      .text-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .text-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .text-content p {
+        font-size: 0.95rem;
+      }
+
+      .arrow-container {
+        width: 120px;
+        height: 240px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .photo-section-container {
+        flex-direction: column;
+        height: auto;
+        margin-top: 150px;
+      }
+
+      .left-col,
+      .right-col {
+        width: 100%;
+        min-height: 400px;
+      }
+
+      .polaroid {
+        position: relative;
+        transform: rotate(-5deg);
+        margin: 40px auto;
+        width: 90%;
+        max-width: 400px;
+        top: auto;
+        left: auto;
+      }
+
+      .polaroid img {
+        height: 400px;
+      }
+
+      .text-content {
+        padding: 40px 20px;
+      }
+
+      .arrow-container {
+        display: none;
+      }
+
+      /* Nascondi gli SvgAsh su mobile */
+      .photo-section-container :global(svg) {
+        display: none;
+      }
+    }
+  </style>
+</article>

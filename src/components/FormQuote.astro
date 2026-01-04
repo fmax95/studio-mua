@@ -1,8 +1,75 @@
+---
+/* Nessun import necessario */
+---
+
 <div class="form-container">
-  <h1>PLACE HOLDER FORM</h1>
-  <h1>PLACE HOLDER FORM</h1>
-  <h1>PLACE HOLDER FORM</h1>
+  <form
+    id="contact-form"
+    action="https://docs.google.com/forms/d/e/1FAIpQLScnaH0LSaFeGr3zfgHD8FLc9iI_DKLUbmDHOzaYEhT1wNyupg/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted = true;"
+  >
+    <div>
+      <label for="nome">Nome</label><br />
+      <input
+        type="text"
+        id="nome"
+        name="entry.47521721"
+        placeholder="Il tuo nome"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="email">Email</label><br />
+      <input
+        type="email"
+        id="email"
+        name="entry.706882435"
+        placeholder="La tua email"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="messaggio">Messaggio</label><br />
+      <textarea
+        id="messaggio"
+        name="entry.399495840"
+        placeholder="Scrivi il tuo messaggio"
+        rows="5"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Invia</button>
+  </form>
+
+  <p id="success-message" class="success-message">
+    Grazie! Il tuo messaggio è stato inviato correttamente.
+  </p>
+
+  <iframe
+    name="hidden_iframe"
+    style="display:none;"
+    onload="if (submitted) showSuccessMessage();"
+  ></iframe>
 </div>
+
+<script is:inline>
+  let submitted = false;
+
+  function showSuccessMessage() {
+    submitted = false;
+
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.reset();
+    successMessage.style.display = 'block';
+  }
+</script>
 
 <style>
   .form-container {
@@ -12,5 +79,43 @@
     background-color: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container div {
+    margin-bottom: 16px;
+  }
+
+  .form-container label {
+    font-weight: 600;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+  }
+
+  .form-container button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--brown);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #e6f7e6;
+    color: #1e7a1e;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
   }
 </style>

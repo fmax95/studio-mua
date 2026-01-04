@@ -50,6 +50,7 @@ const {
     border-radius: 18px;
     padding: 18px;
     padding-top: 50px;
+    padding-bottom: 40px;
     box-shadow: 0 10px 0 rgba(75, 56, 33, 0.22);
     display: flex;
     flex-direction: column;
@@ -57,6 +58,15 @@ const {
     align-items: center;
     gap: 16px;
     text-align: center;
+    position: relative;
+  }
+
+  @media (max-width: 720px) {
+    .card {
+      height: auto;
+      min-height: 320px;
+      padding-bottom: 50px;
+    }
   }
 
   .card__header {

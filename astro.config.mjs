@@ -5,9 +5,6 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://studiomuadesign.it",
   trailingSlash: "ignore",
-  build: {
-    format: "directory",
-  },
   i18n: {
     defaultLocale: "it",
     locales: ["it", "en"],

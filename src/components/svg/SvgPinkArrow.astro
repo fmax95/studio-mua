@@ -1,0 +1,67 @@
+---
+// AbsoluteSvg.astro
+export type Props = {
+  x?: number | string; // es: 120 oppure "2rem" oppure "10%"
+  y?: number | string; // es: 80 oppure "1.5rem"
+  width?: number | string; // es: 300 oppure "12rem" (se non passi nulla usa quello dell'svg)
+  height?: number | string; // es: 300 oppure "12rem"
+  zIndex?: number;
+  rotateDeg?: number; // opzionale
+  class?: string;
+  style?: string;
+  ariaLabel?: string;
+};
+
+const {
+  x = 0,
+  y = 0,
+  width,
+  height,
+  zIndex = 1,
+  rotateDeg = 0,
+  class: className,
+  style,
+  ariaLabel = "Decorative SVG",
+} = Astro.props;
+
+const toCss = (v: number | string) => (typeof v === "number" ? `${v}px` : v);
+
+const inlineStyle = [
+  "position:absolute",
+  `left:${toCss(x)}`,
+  `top:${toCss(y)}`,
+  `z-index:${zIndex}`,
+  rotateDeg ? `transform:rotate(${rotateDeg}deg)` : "",
+  width != null ? `width:${toCss(width)}` : "",
+  height != null ? `height:${toCss(height)}` : "",
+  style ?? "",
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<div class={className} style={inlineStyle} aria-label={ariaLabel} role="img">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="Livello_1"
+    version="1.1"
+    viewBox="0 0 141.7 141.7"
+  >
+    <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+    <defs>
+      <style>
+        .st0 {
+          fill: #f6c4db;
+        }
+      </style>
+    </defs>
+    <path
+      class="st0"
+      d="M113.8,2.9c-26.1.8-51.9,10.1-72.4,26.2s-18.5,18.4-14.6,30.6c3.3,10.4,14.7,16.1,25,16s13.7-2.2,20.1-4.9,6.3-2.9,9.4-4.5,5-2.6,7.3-4.3c4.4-3.3,7.9-8.3,6.3-14s-6.5-9-11.7-9.8c-12.2-1.9-21.8,10.2-26.2,20.1-4.8,10.8-5.8,23.1-2.8,34.5s9.8,20.9,19.3,27.5c9.1,6.4,20.4,9.8,31.5,9.4s5.5-.4,8.2-1,1.4-4.3-1-3.8c-19.9,4.1-41.8-6.2-51-24.5s-5.9-20.6-3.8-30.9,3-10.1,5.7-14.6,6.4-8.8,11.2-11.3,9.5-2.3,13.5.8,3.1,3.3,3.4,5.5-.6,4.2-1.8,5.8c-3.2,4.1-8.5,6.3-13,8.5s-11.5,5.4-17.7,6.7c-9.4,2-21.1,0-26.6-8.8s1-20.5,8.3-27.2,9.2-7.3,14.2-10.4,10.5-5.9,16-8.3c10.9-4.6,22.5-7.7,34.2-8.9s5.9-.5,8.9-.6,2.5-4,0-3.9h0Z"
+    ></path>
+    <path
+      class="st0"
+      d="M110.5,137.4l5.3-12.6c.3-.8-.2-1.9-.9-2.2-3.6-1.9-7.2-3.8-10.9-5.7s-4.2,2.2-2,3.4c3.6,1.9,7.2,3.8,10.9,5.7l-.9-2.2-5.3,12.6c-.4,1,.4,2.2,1.4,2.4s2-.4,2.4-1.4h0Z"
+    ></path>
+  </svg>
+</div>

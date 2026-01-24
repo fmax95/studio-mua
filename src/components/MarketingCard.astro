@@ -1,4 +1,6 @@
 ---
+import SvgShield from "./svg/SvgShield.astro";
+
 export type Props = {
   title?: string;
   subtitle?: string;
@@ -6,6 +8,7 @@ export type Props = {
   cta?: string;
   href?: string;
   class?: string;
+  color?: "pink" | "green" | "brown";
 };
 
 const {
@@ -15,10 +18,41 @@ const {
   cta = "Get started",
   href,
   class: className,
+  color,
 } = Astro.props;
+
+const ctaColorClass = color ? `card__cta--${color}` : "";
+// Inline styles to guarantee correct colors regardless of cascade
+let ctaStyle = "";
+if (color === "pink") {
+  ctaStyle = "background: var(--pink); color: var(--brown);";
+} else if (color === "green") {
+  ctaStyle = "background: var(--green); color: var(--brown);";
+} else if (color === "brown") {
+  ctaStyle = "background: var(--brown); color: var(--white);";
+}
+
+// Configurazione posizione e rotazione dello shield in base al colore
+let shieldX = "50%";
+let shieldY = "0%";
+let shieldRotation = 0;
+
+if (color === "pink") {
+  shieldRotation = -10; // verso sinistra
+} else if (color === "green") {
+  shieldX = "65%";
+  shieldY = "0";
+  shieldRotation = 10; // verso destra
+} else if (color === "brown") {
+  shieldX = "65%";
+  shieldY = "0";
+  shieldRotation = -15; // verso sinistra
+}
 ---
 
 <article class={`card ${className ?? ""}`}>
+  <SvgShield type={color} x={shieldX} y={shieldY} width="60px" rotateDeg={shieldRotation} />
+  
   <header class="card__header">
     <p class="card__subtitle">{subtitle}</p>
     <h3 class="card__title">{title}</h3>
@@ -28,11 +62,15 @@ const {
 
   {
     href ? (
-      <a href={href} class="card__cta">
+      <a href={href} class={`card__cta ${ctaColorClass}`} style={ctaStyle}>
         {cta}
       </a>
     ) : (
-      <button class="card__cta" type="button">
+      <button
+        class={`card__cta ${ctaColorClass}`}
+        type="button"
+        style={ctaStyle}
+      >
         {cta}
       </button>
     )
@@ -121,12 +159,125 @@ const {
     cursor: pointer;
   }
 
-  .card__cta:hover {
+  /* Default hover only when no color variant applied */
+  .card__cta:not(.card__cta--pink):not(.card__cta--green):not(
+      .card__cta--brown
+    ):hover {
     background: var(--blue);
     color: var(--brown);
+  }
+  /* CTA Color Variants */
+  .card__cta--pink {
+    background: var(--pink);
+    color: var(--brown);
+  }
+  .card__cta--green {
+    background: var(--green);
+    color: var(--brown);
+  }
+  .card__cta--brown {
+    background: var(--brown);
+    color: var(--white);
+  }
+
+  /* Preserve variant colors on hover */
+  .card__cta--pink:hover {
+    background: var(--pink);
+    color: var(--brown);
+  }
+  .card__cta--green:hover {
+    background: var(--green);
+    color: var(--brown);
+  }
+  .card__cta--brown:hover {
+    background: var(--brown);
+    color: var(--white);
   }
 
   .card__cta:active {
     transform: translateY(1px);
+  }
+
+  /* Responsive spacing steps */
+  @media (max-width: 1200px) {
+    .card {
+      padding: 16px;
+      padding-top: 44px;
+      padding-bottom: 36px;
+      gap: 14px;
+      height: 330px;
+    }
+    .card__header {
+      gap: 5px;
+    }
+    .card__body {
+      line-height: 1.32;
+    }
+    .card__cta {
+      transform: translateY(46%);
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .card {
+      padding: 14px;
+      padding-top: 40px;
+      padding-bottom: 32px;
+      gap: 12px;
+      height: 310px;
+    }
+    .card__header {
+      gap: 4px;
+    }
+    .card__title {
+      font-size: 21px;
+    }
+    .card__body {
+      font-size: 13.5px;
+      line-height: 1.3;
+    }
+    .card__cta {
+      transform: translateY(44%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .card {
+      padding: 12px;
+      padding-top: 36px;
+      padding-bottom: 28px;
+      gap: 10px;
+      height: 300px;
+    }
+    .card__title {
+      font-size: 20px;
+    }
+    .card__body {
+      font-size: 13px;
+      line-height: 1.28;
+    }
+    .card__cta {
+      transform: translateY(42%);
+    }
+  }
+
+  @media (max-width: 750px) {
+    .card {
+      padding: 10px;
+      padding-top: 32px;
+      padding-bottom: 24px;
+      gap: 8px;
+      height: 290px;
+    }
+    .card__title {
+      font-size: 19px;
+    }
+    .card__body {
+      font-size: 12.8px;
+      line-height: 1.26;
+    }
+    .card__cta {
+      transform: translateY(40%);
+    }
   }
 </style>

@@ -1,0 +1,41 @@
+---
+// Locale & translations
+const currentLocale = Astro.currentLocale || "it";
+const translations = await import(`../../i18n/${currentLocale}.json`);
+const t = translations.default;
+---
+
+<section class="manifesto-section">
+  <div class="content-container">
+    <p class="paragraph bold">{t.manifestoSection.paragraph1}</p>
+    <p class="paragraph">{t.manifestoSection.paragraph2}</p>
+    <p class="paragraph">{t.manifestoSection.paragraph3}</p>
+    <p class="paragraph bold">{t.manifestoSection.paragraph4}</p>
+  </div>
+</section>
+
+<style>
+  .manifesto-section {
+    width: 100%;
+    padding: 100px 0 100px 0;
+  }
+
+  .content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .paragraph {
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .paragraph.bold {
+    font-weight: bold;
+  }
+</style>

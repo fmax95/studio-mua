@@ -5,22 +5,24 @@
 
 :root {
   /* Color Palette */
-  --brown: #4b3821;
-  --blue: #abbfe2;
-  --white: #fef6c7;
+  --brown: #533a1e;
+  --blue: #9ab4dd;
+  --blue-light: #d7e1ea;
+  --white: #fffaee;
   --black: #141105;
-  --pink: #ebc7dc;
-  --blue-light: #D8E1F0;
+  --pink: #f7c4db;
+  --green: #b1d8bf;
 
   /* Font Families */
   --font-title: "Fraunces", serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-script: "Allura", cursive;
 
   /* Typography Scale - Fluid Responsive */
   --fs-body: clamp(16px, 0.35vw + 15px, 18px);
   --fs-eyebrow: clamp(14px, 0.3vw + 13px, 18px);
-  --fs-h3: clamp(20px, 1.0vw + 16px, 34px);
+  --fs-h3: clamp(20px, 1vw + 16px, 34px);
   --fs-h2: clamp(26px, 1.8vw + 18px, 46px);
   --fs-h1: clamp(36px, 3.2vw + 18px, 66px);
 }

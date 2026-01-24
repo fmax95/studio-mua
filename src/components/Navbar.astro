@@ -1,5 +1,4 @@
 ---
-import { string } from "astro:schema";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const logoSize = (times = 1) => {
@@ -91,14 +90,14 @@ const t = translations.default;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #e0e0e0;
     color: var(--brown);
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    border-top: 10px solid var(--blue);
+    border-top: 60px solid var(--blue);
   }
 
   .links-container {
@@ -202,7 +201,8 @@ const t = translations.default;
   @media (max-width: 720px) {
     .navbar-container {
       justify-content: space-between;
-      padding: 10px 15px;
+      padding: 3px 15px;
+      border-top: 10px solid var(--blue);
     }
 
     .upper {

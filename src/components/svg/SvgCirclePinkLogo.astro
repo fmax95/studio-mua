@@ -1,0 +1,158 @@
+---
+// AbsoluteSvg.astro
+export type Props = {
+  x?: number | string; // es: 120 oppure "2rem" oppure "10%"
+  y?: number | string; // es: 80 oppure "1.5rem"
+  width?: number | string; // es: 300 oppure "12rem" (se non passi nulla usa quello dell'svg)
+  height?: number | string; // es: 300 oppure "12rem"
+  zIndex?: number;
+  rotateDeg?: number; // opzionale
+  class?: string;
+  style?: string;
+  ariaLabel?: string;
+};
+
+const {
+  x = 0,
+  y = 0,
+  width,
+  height,
+  zIndex = 1,
+  rotateDeg = 0,
+  class: className,
+  style,
+  ariaLabel = "Decorative SVG",
+} = Astro.props;
+
+const toCss = (v: number | string) => (typeof v === "number" ? `${v}px` : v);
+
+const inlineStyle = [
+  "position:absolute",
+  `left:${toCss(x)}`,
+  `top:${toCss(y)}`,
+  `z-index:${zIndex}`,
+  rotateDeg ? `transform:rotate(${rotateDeg}deg)` : "",
+  width != null ? `width:${toCss(width)}` : "",
+  height != null ? `height:${toCss(height)}` : "",
+  style ?? "",
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<div class={className} style={inlineStyle} aria-label={ariaLabel} role="img">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="circle-pink-logo"
+    data-name="Livello 1"
+    viewBox="0 0 312.27 312.27"
+  >
+    <defs>
+      <style>
+        #circle-pink-logo .cls-1 {
+          fill: #fffaee;
+        }
+
+        #circle-pink-logo .cls-2 {
+          fill: #4c3821;
+          font-family: Helvetica-Bold, Helvetica;
+          font-size: 42.34px;
+          font-weight: 700;
+        }
+
+        #circle-pink-logo .cls-3 {
+          fill: #f6c4db;
+        }
+      </style>
+    </defs>
+    <circle class="cls-3" cx="156.13" cy="156.15" r="145.03"></circle>
+    <text class="cls-2" transform="translate(52.13 150.48) rotate(-79.15)"
+      ><tspan x="0" y="0">S</tspan></text
+    >
+    <text class="cls-2" transform="translate(57.08 124.34) rotate(-65.07)"
+      ><tspan x="0" y="0">T</tspan></text
+    >
+    <text class="cls-2" transform="translate(66.83 102.15) rotate(-50.36)"
+      ><tspan x="0" y="0">U</tspan></text
+    >
+    <text class="cls-2" transform="translate(85.01 79.82) rotate(-34.57)"
+      ><tspan x="0" y="0">D</tspan></text
+    >
+    <text class="cls-2" transform="translate(109.49 63.89) rotate(-23.61)"
+      ><tspan x="0" y="0">I</tspan></text
+    >
+    <text class="cls-2" transform="translate(118.62 58.58) rotate(-11.96)"
+      ><tspan x="0" y="0">O</tspan></text
+    >
+    <text class="cls-2" transform="translate(149.56 52.97) rotate(-.31)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(160.34 52.79) rotate(6.35)"
+      ><tspan x="0" y="0">*</tspan></text
+    >
+    <text class="cls-2" transform="translate(175.91 54.69) rotate(14.22)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(186.37 55.89) rotate(26.48)"
+      ><tspan x="0" y="0">M</tspan></text
+    >
+    <text class="cls-2" transform="translate(216.19 70.82) rotate(43.61)"
+      ><tspan x="0" y="0">U</tspan></text
+    >
+    <text class="cls-2" transform="translate(237.21 90.52) rotate(59.4)"
+      ><tspan x="0" y="0">A</tspan></text
+    >
+    <text class="cls-2" transform="translate(250.83 114.68) rotate(69.57)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(254.82 124.81) rotate(76.94)"
+      ><tspan x="0" y="0">*</tspan></text
+    >
+    <text class="cls-2" transform="translate(258.25 139.99) rotate(84.32)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(260.14 150.43) rotate(94.69)"
+      ><tspan x="0" y="0">S</tspan></text
+    >
+    <text class="cls-2" transform="translate(258.03 176.98) rotate(108.64)"
+      ><tspan x="0" y="0">T</tspan></text
+    >
+    <text class="cls-2" transform="translate(250.78 200.1) rotate(123.37)"
+      ><tspan x="0" y="0">U</tspan></text
+    >
+    <text class="cls-2" transform="translate(235.13 224.29) rotate(139.22)"
+      ><tspan x="0" y="0">D</tspan></text
+    >
+    <text class="cls-2" transform="translate(212.54 242.76) rotate(150.14)"
+      ><tspan x="0" y="0">I</tspan></text
+    >
+    <text class="cls-2" transform="translate(204.03 249.04) rotate(161.74)"
+      ><tspan x="0" y="0">O</tspan></text
+    >
+    <text class="cls-2" transform="translate(173.88 258) rotate(173.42)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(163.12 259.46) rotate(-179.24)"
+      ><tspan x="0" y="0">*</tspan></text
+    >
+    <text class="cls-2" transform="translate(147.6 259.18) rotate(-171.8)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(136.98 259.08) rotate(-159.82)"
+      ><tspan x="0" y="0">M</tspan></text
+    >
+    <text class="cls-2" transform="translate(105.71 247.51) rotate(-142.63)"
+      ><tspan x="0" y="0">U</tspan></text
+    >
+    <text class="cls-2" transform="translate(82.68 230.23) rotate(-126.83)"
+      ><tspan x="0" y="0">A</tspan></text
+    >
+    <text class="cls-2" transform="translate(66.52 207.68) rotate(-116.69)"
+      ><tspan x="0" y="0"> </tspan></text
+    >
+    <text class="cls-2" transform="translate(61.44 198.06) rotate(-109.36)"
+      ><tspan x="0" y="0">*</tspan></text
+    >
+    <circle class="cls-1" cx="156.13" cy="156.15" r="72.51"></circle>
+  </svg>
+</div>

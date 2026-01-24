@@ -28,5 +28,23 @@
     "switch": "Cambia lingua",
     "italian": "Italiano",
     "english": "English"
+  },
+  "homeHeader": {
+    "introTitle": "Ita Lorem ipsum dolor sit amet",
+    "headerTitle": "Ita Your Marketing should feel seamless, stress-free & simple",
+    "subtitle": "Ita Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "welcomeSection": {
+    "title": "Welcome to Studio Mua",
+    "paragraph1": "Attraverso una combinazione strategica di Social Media Management, Content Creation professionale e Graphic Design su misura, costruiamo un'immagine che non solo funziona, ma conquista.",
+    "paragraph2": "Crediamo che ogni brand meriti una presenza digitale che rispecchi la sua personalità, i suoi valori e le sue ambizioni. Per questo sviluppiamo contenuti autentici, visual curati e una comunicazione pensata per generare engagement, rafforzare l'identità e aumentare la visibilità.",
+    "paragraph3": "Con Studio Mua il tuo brand non diventa semplicemente \"più bello\": diventa immediato, riconoscibile e capace di attrarre l'attenzione giusta. È la scelta ideale per chi vuole distinguersi davvero, affermare la propria presenza sui social e costruire una community forte e partecipe.",
+    "closingTitle": "Perché oggi non basta esserci: serve lasciare il segno."
+  },
+  "manifestoSection": {
+    "paragraph1": "Non sono qui per seguire i trend: sono qui per crearli.",
+    "paragraph2": "Disegno identità, plasmo immaginari, trasformo brand timidi in presenze che non puoi ignorare. Sono quella che vede prima, immagina meglio e realizza tutto con uno stile che non chiede il permesso di esistere.",
+    "paragraph3": "Grafica, contenuti, social, strategie: prendo ciò che hai e lo porto dove non avresti mai pensato, ma dove il tuo brand merita di stare.",
+    "paragraph4": "In un mondo che scorre veloce, io catturo l'attenzione. E la faccio restare."
   }
 }

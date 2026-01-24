@@ -10,18 +10,21 @@ const { class: className } = Astro.props;
     subtitle="Strategy • Concept"
     cta="Lorem Ipsum"
     href="/graphic-designer"
+    color="pink"
   />
   <MarketingCard
     title="The Party Starter"
     subtitle="Planning • Launch"
     cta="Lorem Ipsum"
     href="/content-creator"
+    color="green"
   />
   <MarketingCard
     title="The Vault"
     subtitle="Done-for-you"
     cta="Lorem Ipsum"
     href="/social-media-manager"
+    color="brown"
   />
 </section>
 
@@ -32,15 +35,40 @@ const { class: className } = Astro.props;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 100px 24px;
+  }
+
+  @media (max-width: 1200px) {
+    .row {
+      gap: 36px;
+      padding: 0 22px;
+    }
+  }
+  @media (max-width: 1050px) {
+    .row {
+      gap: 32px;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 900px) {
+    .row {
+      gap: 28px;
+      padding: 0 18px;
+    }
+  }
+  @media (max-width: 750px) {
+    .row {
+      gap: 24px;
+      padding: 0 16px;
+    }
   }
 
   /* Sotto 720px: 1 colonna */
   @media (max-width: 720px) {
     .row {
       grid-template-columns: 1fr;
-      gap: 32px;
-      padding: 0 20px;
+      gap: 82px;
+      padding: 0 16px;
     }
   }
 </style>

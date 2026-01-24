@@ -1,6 +1,6 @@
 ---
 import SvgArrow from "./SvgArrow.astro";
-import SvgAsh from "./SvgAsh.astro";
+import SvgGreenAsterisk from "./SvgGreenAsterisk.astro";
 
 export type Props = {
   title?: string;
@@ -22,8 +22,8 @@ const {
 
 <article>
   <div class="photo-section-container">
-    <SvgAsh x="60%" y="-1%" rotateDeg={15} zIndex={0} />
-    <SvgAsh x="80%" y="80%" rotateDeg={15} zIndex={0} />
+    <SvgGreenAsterisk x="60%" y="-1%" rotateDeg={15} zIndex={0} />
+    <SvgGreenAsterisk x="80%" y="80%" rotateDeg={15} zIndex={0} />
 
     <div class="left-col">
       <div class="arrow-container">
@@ -215,7 +215,7 @@ const {
         display: none;
       }
 
-      /* Nascondi gli SvgAsh su mobile */
+      /* Nascondi gli SvgGreenAsterisk su mobile */
       .photo-section-container :global(svg) {
         display: none;
       }

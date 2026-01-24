@@ -5,79 +5,30 @@ import Bubble from "../components/Bubble.astro";
 import SvgSmartphone from "../components/SvgSmartphone.astro";
 import MarketingCardRow from "../components/MarketingCardRow.astro";
 import SvgSwosh from "../components/SvgSwosh.astro";
-import SvgAsh from "../components/SvgAsh.astro";
+import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro";
 import SvgGirl from "../components/SvgGirl.astro";
 import PhotoSection from "../components/PhotoSection.astro";
 import SvgSwirl from "../components/SvgSwirl.astro";
+import HomeHeader from "../components/new-ui/HomeHeader.astro";
+import WelcomeSection from "../components/new-ui/WelcomeSection.astro";
+import ManifestoSection from "../components/new-ui/ManifestoSection.astro";
 ---
 
 <Layout title="Studio Mua | Homepage">
-  <Header />
+  <HomeHeader />
+  <WelcomeSection />
   <main>
-    <div class="bubble-container">
-      <Bubble>
-        Your feed is full of brands trying to sell you something &amp; your
-        inbox is packed with emails you keep meaning to unsubscribe from...
-      </Bubble>
+    <div class="card-row-container">
+      <MarketingCardRow />
     </div>
-    <div class="text-container">
-      <SvgSmartphone x="0%" y="-35%" rotateDeg={16} zIndex={0} />
-      <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
-      <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
-      <SvgAsh x="80%" y="60%" rotateDeg={-10} zIndex={0} />
-      <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
-      <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
-      <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
-      <SvgAsh x="1%" y="60%" rotateDeg={-10} zIndex={0} />
-
-      <h1 class="text-block-title">Welcome to Studio Mua</h1>
-      <p class="text-block">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit.
-      </p>
-      <p class="text-block">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-      </p>
-      <p class="text-block">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit.
-      </p>
-      <p class="text-block text-block-bottom">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-      </p>
-    </div>
-    <div class="cards-container">
-      <div class="girl-mobile">
-        <SvgGirl x="5%" y="-5%" rotateDeg={0} zIndex={0} />
-      </div>
-      <div class="girl-desktop">
-        <SvgGirl x="5%" y="-25%" rotateDeg={0} zIndex={0} />
-      </div>
-      <h2 class="cards-title">
-        Go from post & ghost to <br />content that just (gets) clicks
-      </h2>
-      <div class="card-row-container">
-        <SvgSwosh x="14%" y="39%" rotateDeg={-15} zIndex={0} />
-        <SvgSwirl x="20%" y="80%" rotateDeg={30} zIndex={0} />
-        <SvgAsh x="68%" y="-6%" rotateDeg={-20} zIndex={0} />
-        <MarketingCardRow />
-      </div>
-      <PhotoSection />
-    </div>
+    <ManifestoSection />
+    <PhotoSection />
   </main>
 </Layout>
 
 <style>
   .cards-container {
-    margin-top: 100px;
+    margin-top: 300px;
     text-align: center;
     padding-bottom: 100px;
     position: relative;
@@ -91,6 +42,7 @@ import SvgSwirl from "../components/SvgSwirl.astro";
   }
 
   .card-row-container {
+    margin: 130px 0;
     position: relative;
     z-index: 2;
   }

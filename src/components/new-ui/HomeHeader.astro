@@ -1,0 +1,66 @@
+---
+import SvgGreenAsterisk from "../SvgGreenAsterisk.astro";
+import SvgCirclePinkLogo from "../svg/SvgCirclePinkLogo.astro";
+
+// Locale & translations, following app pattern
+const currentLocale = Astro.currentLocale || "it";
+const translations = await import(`../../i18n/${currentLocale}.json`);
+const t = translations.default;
+---
+
+<div class="header">
+  <div class="header-content">
+    <SvgGreenAsterisk x="80%" y="40%" rotateDeg={15} zIndex={1} width="100px" />
+    <SvgCirclePinkLogo x="70%" y="103%" zIndex={1} width="100px" />
+    <h3 class="intro-title">{t.homeHeader.introTitle}</h3>
+    <h1 class="header-title">
+      {t.homeHeader.headerTitle}
+    </h1>
+    <p class="header-subtitle">{t.homeHeader.subtitle}</p>
+  </div>
+  <div class="white-bend"></div>
+</div>
+
+<style>
+  .header {
+  }
+
+  .blue-bend {
+    height: 80px;
+    background-color: var(--blue);
+  }
+
+  .white-bend {
+    width: 100%;
+    height: 80px;
+    background-color: var(--white);
+  }
+
+  .header-content {
+    position: relative;
+    padding: 100px 40px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .intro-title {
+    color: var(--brown);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  .header-title {
+    color: var(--brown);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  .header-subtitle {
+    color: var(--brown);
+    position: relative;
+    z-index: 2;
+  }
+</style>

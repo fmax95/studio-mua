@@ -1,0 +1,70 @@
+---
+interface Props {
+  titolo: string;
+  typeSvg: string;
+  text: string;
+}
+
+const { titolo, typeSvg, text } = Astro.props;
+---
+
+<div class="small-card">
+  <h3 class="card-title">{titolo}</h3>
+  <div class="svg-container">
+    {
+      typeSvg === "star" && (
+        <svg viewBox="0 0 100 100" class="svg-icon">
+          <polygon
+            points="50,10 61,39 92,39 67,58 77,88 50,69 23,88 33,58 8,39 39,39"
+            fill="var(--pink)"
+          />
+        </svg>
+      )
+    }
+  </div>
+  <p class="card-text">{text}</p>
+</div>
+
+<style>
+  .small-card {
+    background-color: var(--blue-light);
+    color: var(--brown);
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .svg-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .svg-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+</style>

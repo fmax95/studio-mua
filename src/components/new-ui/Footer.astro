@@ -1,0 +1,157 @@
+---
+// Locale & translations
+const currentLocale = Astro.currentLocale || "it";
+const translations = await import(`../../i18n/${currentLocale}.json`);
+const t = translations.default;
+
+const logoSize = (times = 1) => {
+  const w = 115;
+  const h = 48;
+  return { width: w * times, height: h * times };
+};
+
+const url: Record<string, string> = {
+  homepage: currentLocale === "en" ? "/en" : "/",
+  graphicDesigner:
+    currentLocale === "en" ? "/en/graphic-designer" : "/graphic-designer",
+  contentCreator:
+    currentLocale === "en" ? "/en/content-creator" : "/content-creator",
+  socialMediaManager:
+    currentLocale === "en"
+      ? "/en/social-media-manager"
+      : "/social-media-manager",
+  contactUs: "mailto:studiomua@yahoo.com",
+};
+---
+
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href={url.homepage}>
+        <img
+          src="/logo.svg"
+          width={logoSize(3).width}
+          height={logoSize(3).height}
+          alt="Studio Mua"
+        />
+      </a>
+    </div>
+    <div class="footer-info">
+      <div class="footer-column">
+        <p class="info-line">P.IVA</p>
+        <p class="info-line">01599600119</p>
+        <div class="space"></div>
+        <p class="info-line">{t.newFooter.office}</p>
+        <p class="info-line">Via del Torretto 31 - 19121 La Spezia</p>
+      </div>
+      <nav class="footer-column footer-links">
+        <a href={url.homepage}>{t.newFooter.homepage}</a>
+        <a href={url.graphicDesigner}>{t.newFooter.graphicDesigner}</a>
+        <a href={url.socialMediaManager}>{t.newFooter.socialMediaManager}</a>
+        <a href={url.contentCreator}>{t.newFooter.contentCreator}</a>
+        <a href={url.contactUs}>{t.newFooter.contactUs}</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-container {
+    background-color: var(--white);
+    color: var(--brown);
+    padding: 40px 0;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 60px;
+  }
+
+  .footer-logo img {
+    display: block;
+  }
+
+  .footer-info {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-line {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: right;
+  }
+
+  .footer-links {
+    align-items: flex-end;
+  }
+
+  .footer-links a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+    text-align: right;
+  }
+
+  .footer-links a:hover {
+    opacity: 0.7;
+  }
+
+  .space {
+    height: 24px;
+  }
+
+  @media (max-width: 920px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-info {
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .footer-column {
+      align-items: center;
+    }
+
+    .footer-links {
+      align-items: center;
+    }
+
+    .footer-links a {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .footer-container {
+      padding: 30px 0;
+    }
+
+    .footer-content {
+      padding: 0 20px;
+    }
+  }
+</style>

@@ -1,0 +1,204 @@
+---
+import SmallCardWithSvg from "./SmallCardWithSvg.astro";
+
+// Locale & translations
+const currentLocale = Astro.currentLocale || "it";
+const translations = await import(`../../i18n/${currentLocale}.json`);
+const t = translations.default;
+
+interface Card {
+  titolo: string;
+  typeSvg: string;
+  text: string;
+}
+
+interface Props {
+  cards?: Card[];
+}
+
+const cards: Card[] = [
+  {
+    titolo: t.cardCarousel.card1.title,
+    typeSvg: "star",
+    text: t.cardCarousel.card1.text,
+  },
+  {
+    titolo: t.cardCarousel.card2.title,
+    typeSvg: "star",
+    text: t.cardCarousel.card2.text,
+  },
+  {
+    titolo: t.cardCarousel.card3.title,
+    typeSvg: "star",
+    text: t.cardCarousel.card3.text,
+  },
+  {
+    titolo: t.cardCarousel.card4.title,
+    typeSvg: "star",
+    text: t.cardCarousel.card4.text,
+  },
+];
+---
+
+<div class="carousel-container">
+  <h2 class="title">{t.cardCarousel.title}</h2>
+  <div class="carousel" id="carousel">
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index + cards.length}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index + cards.length * 2}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index + cards.length * 3}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index + cards.length * 4}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+    {
+      cards.map((card, index) => (
+        <div class="carousel-item" data-index={index + cards.length * 5}>
+          <SmallCardWithSvg
+            titolo={card.titolo}
+            typeSvg={card.typeSvg}
+            text={card.text}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const carousel = document.getElementById("carousel");
+
+  if (carousel) {
+    const itemWidth = 340; // width + gap
+    const totalItems = carousel.querySelectorAll(".carousel-item").length;
+    const originalItemsCount = totalItems / 6;
+
+    // Inizia dalla terza copia (nel mezzo)
+    carousel.scrollLeft = itemWidth * originalItemsCount * 2.5;
+
+    const checkLoop = () => {
+      const scrollLeft = carousel.scrollLeft;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+      // Se siamo troppo a sinistra, salta più avanti
+      if (scrollLeft < itemWidth * 2) {
+        carousel.style.scrollBehavior = "auto";
+        carousel.scrollLeft = scrollLeft + itemWidth * originalItemsCount;
+        setTimeout(() => {
+          carousel.style.scrollBehavior = "smooth";
+        }, 50);
+      }
+      // Se siamo troppo a destra, salta più indietro
+      else if (scrollLeft > maxScroll - itemWidth * 2) {
+        carousel.style.scrollBehavior = "auto";
+        carousel.scrollLeft = scrollLeft - itemWidth * originalItemsCount;
+        setTimeout(() => {
+          carousel.style.scrollBehavior = "smooth";
+        }, 50);
+      }
+    };
+
+    carousel.addEventListener("scroll", checkLoop);
+  }
+</script>
+
+<style>
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  .carousel-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: 2rem 0;
+    margin-bottom: 160px;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: none;
+    scroll-behavior: smooth;
+    padding: 0 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: min(320px, 80vw);
+  }
+
+  @media (max-width: 768px) {
+    .carousel {
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-item {
+      width: min(280px, 85vw);
+    }
+  }
+</style>

@@ -46,5 +46,32 @@
     "paragraph2": "I design identities, shape imaginaries, transform shy brands into presences you can't ignore. I'm the one who sees first, imagines better, and delivers everything with a style that doesn't ask permission to exist.",
     "paragraph3": "Graphics, content, social media, strategies: I take what you have and bring it where you never thought possible, but where your brand deserves to be.",
     "paragraph4": "In a world that moves fast, I capture attention. And make it stay."
+  },
+  "cardCarousel": {
+    "title": "Our Vision",
+    "card1": {
+      "title": "Bold not random",
+      "text": "We push beyond, but with purpose. Boldness only makes sense when guided by vision, not by chance."
+    },
+    "card2": {
+      "title": "Bold not random",
+      "text": "We push beyond, but with purpose. Boldness only makes sense when guided by vision, not by chance."
+    },
+    "card3": {
+      "title": "Bold not random",
+      "text": "We push beyond, but with purpose. Boldness only makes sense when guided by vision, not by chance."
+    },
+    "card4": {
+      "title": "Bold not random",
+      "text": "We push beyond, but with purpose. Boldness only makes sense when guided by vision, not by chance."
+    }
+  },
+  "newFooter": {
+    "homepage": "Homepage",
+    "graphicDesigner": "Graphic Designer",
+    "socialMediaManager": "Social Media Manager",
+    "contentCreator": "Content Creator",
+    "contactUs": "Contact us",
+    "office": "Our fancy office"
   }
 }

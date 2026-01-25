@@ -1,10 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import MarketingCardRow from "../../components/MarketingCardRow.astro";
-import PhotoSection from "../../components/PhotoSection.astro";
 import HomeHeader from "../../components/new-ui/HomeHeader.astro";
 import WelcomeSection from "../../components/new-ui/WelcomeSection.astro";
 import ManifestoSection from "../../components/new-ui/ManifestoSection.astro";
+import CardCarousel from "../../components/new-ui/CardCarousel.astro";
+import Footer from "../../components/new-ui/Footer.astro";
 ---
 
 <Layout title="Studio Mua | Homepage">
@@ -15,8 +16,9 @@ import ManifestoSection from "../../components/new-ui/ManifestoSection.astro";
       <MarketingCardRow />
     </div>
     <ManifestoSection />
-    <PhotoSection />
+    <CardCarousel />
   </main>
+  <Footer />
 </Layout>
 
 <style>

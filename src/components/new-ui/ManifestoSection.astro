@@ -1,4 +1,6 @@
 ---
+import SvgPinkArrowFlat from "../svg/SvgPinkArrowFlat.astro";
+
 // Locale & translations
 const currentLocale = Astro.currentLocale || "it";
 const translations = await import(`../../i18n/${currentLocale}.json`);
@@ -7,6 +9,7 @@ const t = translations.default;
 
 <section class="manifesto-section">
   <div class="content-container">
+    <SvgPinkArrowFlat x="65%" y="-35%" width="100px" rotateDeg={15} zIndex={1} />
     <p class="paragraph bold">{t.manifestoSection.paragraph1}</p>
     <p class="paragraph">{t.manifestoSection.paragraph2}</p>
     <p class="paragraph">{t.manifestoSection.paragraph3}</p>
@@ -25,11 +28,12 @@ const t = translations.default;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
+    position: relative;
   }
 
   .paragraph {
     color: var(--brown);
-    line-height: 1.2;
+    line-height: 1.2 !important;
     margin-bottom: 30px;
     font-size: 1rem;
     text-align: center;

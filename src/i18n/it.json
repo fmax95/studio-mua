@@ -46,5 +46,32 @@
     "paragraph2": "Disegno identità, plasmo immaginari, trasformo brand timidi in presenze che non puoi ignorare. Sono quella che vede prima, immagina meglio e realizza tutto con uno stile che non chiede il permesso di esistere.",
     "paragraph3": "Grafica, contenuti, social, strategie: prendo ciò che hai e lo porto dove non avresti mai pensato, ma dove il tuo brand merita di stare.",
     "paragraph4": "In un mondo che scorre veloce, io catturo l'attenzione. E la faccio restare."
+  },
+  "cardCarousel": {
+    "title": "Our Vision",
+    "card1": {
+      "title": "Bold not random",
+      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+    },
+    "card2": {
+      "title": "Bold not random",
+      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+    },
+    "card3": {
+      "title": "Bold not random",
+      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+    },
+    "card4": {
+      "title": "Bold not random",
+      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+    }
+  },
+  "newFooter": {
+    "homepage": "Homepage",
+    "graphicDesigner": "Graphic Designer",
+    "socialMediaManager": "Social Media Manager",
+    "contentCreator": "Content Creator",
+    "contactUs": "Contattaci",
+    "office": "Our fancy office"
   }
 }

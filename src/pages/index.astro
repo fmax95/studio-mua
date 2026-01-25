@@ -1,17 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Bubble from "../components/Bubble.astro";
-import SvgSmartphone from "../components/SvgSmartphone.astro";
 import MarketingCardRow from "../components/MarketingCardRow.astro";
-import SvgSwosh from "../components/SvgSwosh.astro";
-import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro";
-import SvgGirl from "../components/SvgGirl.astro";
-import PhotoSection from "../components/PhotoSection.astro";
-import SvgSwirl from "../components/SvgSwirl.astro";
 import HomeHeader from "../components/new-ui/HomeHeader.astro";
 import WelcomeSection from "../components/new-ui/WelcomeSection.astro";
 import ManifestoSection from "../components/new-ui/ManifestoSection.astro";
+import CardCarousel from "../components/new-ui/CardCarousel.astro";
+import Footer from "../components/new-ui/Footer.astro";
 ---
 
 <Layout title="Studio Mua | Homepage">
@@ -22,8 +16,9 @@ import ManifestoSection from "../components/new-ui/ManifestoSection.astro";
       <MarketingCardRow />
     </div>
     <ManifestoSection />
-    <PhotoSection />
+    <CardCarousel />
   </main>
+  <Footer />
 </Layout>
 
 <style>

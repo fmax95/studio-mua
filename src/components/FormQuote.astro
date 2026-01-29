@@ -1,5 +1,15 @@
 ---
-/* Nessun import necessario */
+import itTranslations from "../i18n/it.json";
+import enTranslations from "../i18n/en.json";
+
+interface Props {
+  lang?: "it" | "en";
+}
+
+const { lang = "it" } = Astro.props;
+const translations = lang === "it" ? itTranslations : enTranslations;
+const t = translations.form;
+const privacyUrl = lang === "it" ? "/privacy" : "/en/privacy";
 ---
 
 <div class="form-container">
@@ -11,51 +21,63 @@
     onsubmit="submitted = true;"
   >
     <div>
-      <label for="nome">Nome</label><br />
+      <label for="nome">{t.name}</label><br />
       <input
         type="text"
         id="nome"
         name="entry.47521721"
-        placeholder="Il tuo nome"
+        placeholder={t.namePlaceholder}
         required
       />
     </div>
 
     <div>
-      <label for="email">Email</label><br />
+      <label for="email">{t.email}</label><br />
       <input
         type="email"
         id="email"
         name="entry.706882435"
-        placeholder="La tua email"
+        placeholder={t.emailPlaceholder}
         required
       />
     </div>
 
     <div>
-      <label for="dove">Tipo di incontro</label><br />
+      <label for="dove">{t.meetingType}</label><br />
       <select name="entry.1289812636" id="tipoincontro" required>
-        <option value="" disabled selected>Seleziona un'opzione</option>
-        <option value="Video chiamata">Video chiamata</option>
-        <option value="In ufficio">In ufficio</option>
-        <option value="Propria sede">Propria sede</option>
+        <option value="" disabled selected>{t.meetingTypePlaceholder}</option>
+        <option value="Video chiamata">{t.meetingTypeVideo}</option>
+        <option value="In ufficio">{t.meetingTypeOffice}</option>
+        <option value="Propria sede">{t.meetingTypeCustomer}</option>
       </select>    
     </div>
 
       <div>
-        <label for="messaggio">Messaggio</label><br />
+        <label for="messaggio">{t.message}</label><br />
         <textarea
           id="messaggio"
           name="entry.399495840"
-          placeholder="Scrivi il tuo messaggio"
+          placeholder={t.messagePlaceholder}
           rows="5"
           required></textarea>
       </div>
 
-      <button type="submit">Invia</button>
+      <div class="privacy-container">
+        <input 
+          type="checkbox" 
+          id="privacy-checkbox" 
+          name="privacy" 
+          required
+        />
+        <label for="privacy-checkbox" class="privacy-label">
+          {t.privacyText} <a href={privacyUrl} target="_blank">{t.privacyLink}</a>
+        </label>
+      </div>
+
+      <button type="submit" id="submit-button" disabled>{t.submit}</button>
 
     <p id="success-message" class="success-message">
-      Grazie! Il tuo messaggio è stato inviato correttamente.
+      {t.successMessage}
     </p>
 
     <iframe
@@ -75,7 +97,25 @@
 
       form.reset();
       successMessage.style.display = "block";
+      
+      // Reset button state after form reset
+      const submitButton = document.getElementById("submit-button");
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
     }
+
+    // Enable/disable submit button based on checkbox state
+    document.addEventListener("DOMContentLoaded", function() {
+      const checkbox = document.getElementById("privacy-checkbox");
+      const submitButton = document.getElementById("submit-button");
+      
+      if (checkbox && submitButton) {
+        checkbox.addEventListener("change", function() {
+          submitButton.disabled = !checkbox.checked;
+        });
+      }
+    });
   </script>
 
   <style>
@@ -106,6 +146,36 @@
       font-family: inherit;
     }
 
+    .privacy-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .privacy-container input[type="checkbox"] {
+      width: auto;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+
+    .privacy-label {
+      font-weight: 400;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .privacy-label a {
+      color: var(--brown);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .privacy-label a:hover {
+      opacity: 0.8;
+    }
+
     .form-container button {
       padding: 10px 20px;
       border-radius: 8px;
@@ -114,6 +184,17 @@
       color: white;
       font-weight: 600;
       cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .form-container button:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    .form-container button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
     }
 
     .success-message {

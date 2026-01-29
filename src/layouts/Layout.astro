@@ -1,12 +1,14 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 import "../styles/global.css";
 
 interface Props {
   title?: string;
+  lang?: "it" | "en";
 }
 
-const { title = "Studio Mua" } = Astro.props;
+const { title = "Studio Mua", lang = "it" } = Astro.props;
 ---
 
 <!doctype html>
@@ -35,6 +37,7 @@ const { title = "Studio Mua" } = Astro.props;
     <div class="layout-container">
       <slot />
     </div>
+    <CookieBanner lang={lang} />
   </body>
 </html>
 

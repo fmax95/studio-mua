@@ -21,6 +21,7 @@ const url: Record<string, string> = {
       ? "/en/social-media-manager"
       : "/social-media-manager",
   contactUs: "mailto:studiomua@yahoo.com",
+  privacy: currentLocale === "en" ? "/en/privacy" : "/privacy",
 };
 ---
 
@@ -50,6 +51,7 @@ const url: Record<string, string> = {
         <a href={url.socialMediaManager}>{t.newFooter.socialMediaManager}</a>
         <a href={url.contentCreator}>{t.newFooter.contentCreator}</a>
         <a href={url.contactUs}>{t.newFooter.contactUs}</a>
+        <a href={url.privacy}>{t.newFooter.privacy}</a>
       </nav>
     </div>
   </div>

@@ -1,0 +1,155 @@
+---
+interface Props {
+  lang?: "it" | "en";
+}
+
+const { lang = "it" } = Astro.props;
+
+// Import translations
+const itTranslations = await import("../i18n/it.json");
+const enTranslations = await import("../i18n/en.json");
+
+const translations = lang === "it" ? itTranslations.default : enTranslations.default;
+const t = translations.cookieBanner;
+const privacyUrl = lang === "it" ? "/privacy" : "/en/privacy";
+---
+
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+  <div class="cookie-content">
+    <p class="cookie-text">
+      {t.message}
+      <a href={privacyUrl} class="cookie-link">{t.privacyLink}</a>
+    </p>
+    <button id="cookie-accept" class="cookie-button">
+      {t.acceptButton}
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const STORAGE_KEY = 'cookieConsentAccepted';
+    const banner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('cookie-accept');
+    
+    // Check if user has already accepted
+    const hasAccepted = localStorage.getItem(STORAGE_KEY);
+    
+    if (!hasAccepted && banner) {
+      // Show banner after a small delay for better UX
+      setTimeout(() => {
+        banner.style.display = 'flex';
+      }, 500);
+    }
+    
+    // Handle accept button click
+    if (acceptButton) {
+      acceptButton.addEventListener('click', function() {
+        localStorage.setItem(STORAGE_KEY, 'true');
+        if (banner) {
+          banner.style.opacity = '0';
+          setTimeout(() => {
+            banner.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+  })();
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideUp 0.5s ease-out;
+    transition: opacity 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .cookie-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cookie-text {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--brown);
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .cookie-link {
+    color: var(--brown);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: opacity 0.3s;
+  }
+
+  .cookie-link:hover {
+    opacity: 0.7;
+  }
+
+  .cookie-button {
+    background-color: var(--brown);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+  }
+
+  .cookie-button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-banner {
+      padding: 16px;
+    }
+
+    .cookie-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+
+    .cookie-text {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .cookie-button {
+      width: 100%;
+    }
+  }
+</style>

@@ -123,7 +123,8 @@
     "socialMediaManager": "Social Media Manager",
     "contentCreator": "Content Creator",
     "contactUs": "Contattaci",
-    "office": "Our fancy office"
+    "office": "Our fancy office",
+    "privacy": "Privacy Policy"
   },
   "marketingCards": {
     "graphicDesigner": {
@@ -147,5 +148,28 @@
       "text": "Le persone non comprano te: comprano la storia che racconti per loro.",
       "cta": "Scopri di più"
     }
+  },
+  "form": {
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "email": "Email",
+    "emailPlaceholder": "La tua email",
+    "meetingType": "Tipo di incontro",
+    "meetingTypePlaceholder": "Seleziona un'opzione",
+    "meetingTypeVideo": "Video chiamata",
+    "meetingTypeOffice": "In ufficio",
+    "meetingTypeCustomer": "Propria sede",
+    "message": "Messaggio",
+    "messagePlaceholder": "Scrivi il tuo messaggio",
+    "submit": "Invia",
+    "successMessage": "Grazie! Il tuo messaggio è stato inviato correttamente.",
+    "privacyText": "Accetto la",
+    "privacyLink": "Privacy Policy",
+    "privacyRequired": "Devi accettare la privacy policy per inviare il form"
+  },
+  "cookieBanner": {
+    "message": "Questo sito utilizza solo cookie tecnici necessari per il corretto funzionamento. Non vengono utilizzati cookie di tracciamento o profilazione. Per maggiori informazioni consulta la nostra",
+    "privacyLink": "Privacy Policy",
+    "acceptButton": "Ho capito"
   }
 }

@@ -123,7 +123,8 @@
     "socialMediaManager": "Social Media Manager",
     "contentCreator": "Content Creator",
     "contactUs": "Contact us",
-    "office": "Our fancy office"
+    "office": "Our fancy office",
+    "privacy": "Privacy Policy"
   },
   "marketingCards": {
     "graphicDesigner": {
@@ -147,5 +148,28 @@
       "text": "People don't buy from you. They buy from the story you tell about them.",
       "cta": "Learn more"
     }
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "Your email",
+    "meetingType": "Meeting type",
+    "meetingTypePlaceholder": "Select an option",
+    "meetingTypeVideo": "Video call",
+    "meetingTypeOffice": "At the office",
+    "meetingTypeCustomer": "At your location",
+    "message": "Message",
+    "messagePlaceholder": "Write your message",
+    "submit": "Submit",
+    "successMessage": "Thank you! Your message has been sent successfully.",
+    "privacyText": "I accept the",
+    "privacyLink": "Privacy Policy",
+    "privacyRequired": "You must accept the privacy policy to submit the form"
+  },
+  "cookieBanner": {
+    "message": "This site uses only technical cookies necessary for proper functioning. No tracking or profiling cookies are used. For more information, please see our",
+    "privacyLink": "Privacy Policy",
+    "acceptButton": "I understand"
   }
 }

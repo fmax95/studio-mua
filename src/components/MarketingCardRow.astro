@@ -23,23 +23,29 @@ const url: Record<string, string> = {
 
 <section class={`row ${className ?? ""}`}>
   <MarketingCard
-    title={t.marketingCards.icebreaker.title}
-    subtitle={t.marketingCards.icebreaker.subtitle}
-    cta={t.marketingCards.icebreaker.cta}
-    href={url.socialMediaManager}
+    keywords={t.marketingCards.graphicDesigner.keywords}
+    title={t.marketingCards.graphicDesigner.title}
+    subtitle={t.marketingCards.graphicDesigner.subtitle}
+    text={t.marketingCards.graphicDesigner.text}
+    cta={t.marketingCards.graphicDesigner.cta}
+    href={url.graphicDesigner}
     color="pink"
   />
   <MarketingCard
-    title={t.marketingCards.partyStarter.title}
-    subtitle={t.marketingCards.partyStarter.subtitle}
-    cta={t.marketingCards.partyStarter.cta}
-    href={url.graphicDesigner}
+    keywords={t.marketingCards.socialMediaManager.keywords}
+    title={t.marketingCards.socialMediaManager.title}
+    subtitle={t.marketingCards.socialMediaManager.subtitle}
+    text={t.marketingCards.socialMediaManager.text}
+    cta={t.marketingCards.socialMediaManager.cta}
+    href={url.socialMediaManager}
     color="green"
   />
   <MarketingCard
-    title={t.marketingCards.vault.title}
-    subtitle={t.marketingCards.vault.subtitle}
-    cta={t.marketingCards.vault.cta}
+    keywords={t.marketingCards.contentCreator.keywords}
+    title={t.marketingCards.contentCreator.title}
+    subtitle={t.marketingCards.contentCreator.subtitle}
+    text={t.marketingCards.contentCreator.text}
+    cta={t.marketingCards.contentCreator.cta}
     href={url.contentCreator}
     color="brown"
   />

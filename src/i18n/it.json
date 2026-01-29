@@ -12,29 +12,53 @@
   "contentCreator": {
     "title": "Content Creator",
     "description": "Servizi professionali per content creator",
-    "pageTitle": "I contenuti non sono mai abbastanza. Devono essere i contenuti giusti.",
-    "paragraph1": "Oggi tutti creano contenuti, ma pochi sanno davvero raccontare. La differenza sta nella strategia, nella cura del dettaglio e nella capacità di trasformare ogni post in un'opportunità di connessione autentica.",
-    "paragraph2": "Come content creator, sviluppiamo contenuti originali, coinvolgenti e allineati alla tua identità di brand. Foto, video, grafiche e testi pensati per generare engagement, rafforzare la tua presenza digitale e costruire una community fedele.",
-    "paragraph3": "Non produciamo contenuti a caso: studiamo il tuo pubblico, individuiamo i trend rilevanti e creiamo materiali che comunicano con efficacia. Ogni contenuto è progettato per lasciare il segno.",
-    "paragraph4": "Perché nel mondo dei social, o catturi l'attenzione o vieni scrollato via. E noi facciamo in modo che ti fermino a guardare."
+    "pageTitle": "Pronto a far parlare tutti del tuo brand?",
+    "scrollingText": "Tell a story",
+    "sectionTitle": "Non basta esserci. Bisogna farsi ricordare.",
+    "paragraph1": "I contenuti sono il volto del tuo brand nel mondo digitale. Immagini, video, grafiche e testi di alta qualità non solo catturano l'attenzione, ma raccontano chi sei, cosa rappresenti e perché vale la pena seguirti. Contenuti unici, coerenti e mai banali trasformano un semplice scroll in un'esperienza memorabile, dove il pubblico non si limita a guardare, ma si connette, interagisce e diventa parte della tua community.",
+    "paragraph2": "Il valore di un contenuto non si misura solo in like o visualizzazioni: si misura in quanto riesce a comunicare il messaggio giusto, evocare emozioni e guidare l'utente verso un'azione concreta. Copy incisivi e call to action potenti completano il quadro, trasformando creatività e strategia in risultati tangibili.",
+    "paragraph3": "Una strategia di contenuti efficace permette di differenziarsi dalla massa, creare engagement reale, fidelizzare il pubblico e rafforzare l'identità del brand. Ogni post diventa uno strumento di marketing, un'opportunità per attrarre nuovi clienti e trasformarli in sostenitori fedeli, lasciando un'impressione indelebile e rendendo il brand impossibile da ignorare.",
+    "paragraph4": "",
+    "whatYouNeedTitle": "Ciò di cui hai bisogno è",
+    "whatYouNeedDescription": "Avere contenuti di qualità e coerenti con l'identità del brand è fondamentale per farsi riconoscere e creare un legame autentico con il pubblico. Contenuti ben progettati, visivamente curati e aggiornati ai trend permettono di catturare l'attenzione, aumentare engagement e rafforzare la credibilità del brand.",
+    "card1": "Pianificare e sviluppare testi, immagini e video pensati per coinvolgere il pubblico target.",
+    "card2": "Ricercare trend, ispirazioni e argomenti rilevanti per mantenere i contenuti sempre attuali.",
+    "card3": "Adattare i contenuti ai diversi canali digitali per massimizzare visibilità e engagement.",
+    "card4": "Creare contenuti originali e di qualità che rispecchiano l'identità e i valori del brand."
   },
   "graphicDesigner": {
     "title": "Graphic Designer",
     "description": "Soluzioni di design grafico creative",
-    "pageTitle": "Se non ti vedono, non esisti. E sui social, mezze misure non ne esistono.",
-    "paragraph1": "In un mondo dove l'immagine è tutto, il graphic design non è solo un dettaglio estetico, ma lo strumento che trasforma un brand in un'esperienza visiva memorabile.",
-    "paragraph2": "Ogni elemento grafico deve comunicare con precisione e impatto: dal logo ai post social, dalle grafiche promozionali ai materiali digitali. Tutto deve essere coerente, riconoscibile e strategicamente pensato.",
-    "paragraph3": "Con Studio Mua, il tuo brand acquisisce un'identità visiva forte e distintiva, capace di catturare l'attenzione e lasciare un'impressione duratura. Creiamo design che non passano inosservati.",
-    "paragraph4": "Perché nel digitale, la prima impressione è quella che conta. E noi la facciamo indimenticabile."
+    "pageTitle": "Non hai bisogno di una strategia di marketing se prima non hai definito quella del tuo brand.",
+    "scrollingText": "Design for people",
+    "sectionTitle": "Il tuo brand non esiste finché non lascia il segno",
+    "paragraph1": "Una brand identity chiara e coerente permette di essere immediatamente riconoscibili, di distinguersi dai competitor e di trasmettere professionalità e affidabilità. Quando tutti gli elementi, dal logo ai colori e dai font al tono di voce, parlano la stessa lingua, il pubblico capisce subito chi sei e cosa rappresenti. Questo aumenta la fiducia, rafforza la reputazione e rende i prodotti o servizi più desiderabili.",
+    "paragraph2": "L'unicità è altrettanto importante. In un mercato pieno di imitazioni e contenuti simili, un brand che ha un'identità personale e definita riesce a catturare l'attenzione e a rimanere nella mente delle persone. Ogni elemento visivo o comunicativo diventa uno strumento concreto per raccontare la storia del brand e far emergere i suoi valori.",
+    "paragraph3": "Una brand identity ben costruita non è solo estetica: è uno strumento strategico che lavora continuamente a favore del brand. Aiuta a rendere coerenti campagne, contenuti e strategie, a creare un linguaggio chiaro con il pubblico e a far sì che ogni interazione rafforzi il messaggio.",
+    "paragraph4": "Chi investe nella propria identità non solo appare più professionale, ma costruisce una base solida per crescita, engagement e riconoscibilità nel tempo.",
+    "whatYouNeedTitle": "Ciò di cui hai bisogno è",
+    "whatYouNeedDescription": "Una brand identity coerente permette al tuo brand di essere immediatamente riconoscibile, comunicare i propri valori con chiarezza e costruire fiducia nel pubblico, trasformando ogni punto di contatto in un'esperienza memorabile.",
+    "card1": "Utilizzare la tipografia in modo strategico per migliorare leggibilità e impatto.",
+    "card2": "Integrare estetica e funzionalità per comunicare il messaggio in modo chiaro e diretto.",
+    "card3": "Creare contenuti grafici funzionali e accattivanti, coerenti con i valori del brand.",
+    "card4": "Sviluppare contenuti visivi coerenti e strategici per rafforzare la comunicazione e aumentare l'engagement."
   },
   "socialMediaManager": {
     "title": "Social Media Manager",
     "description": "Gestione professionale dei social media",
-    "pageTitle": "I social non si gestiscono da soli. E improvvisare non è una strategia.",
-    "paragraph1": "Essere presenti sui social non basta: serve una strategia chiara, una pianificazione costante e la capacità di trasformare ogni interazione in un'opportunità di crescita.",
-    "paragraph2": "Come social media manager, ci occupiamo di tutto: dalla pianificazione editoriale alla creazione dei contenuti, dalla gestione quotidiana all'analisi delle performance. Monitoriamo i trend, ottimizziamo la comunicazione e costruiamo una presenza digitale che genera risultati concreti.",
-    "paragraph3": "Con Studio Mua, i tuoi social diventano uno strumento strategico di marketing, capace di attrarre nuovi clienti, fidelizzare la community e rafforzare la reputazione del tuo brand.",
-    "paragraph4": "Perché gestire i social è un lavoro a tempo pieno. E noi lo facciamo al posto tuo, con metodo e creatività."
+    "pageTitle": "Bloccato con i tuoi social media? Non preoccuparti, sono qui per renderti la vita più semplice.",
+    "scrollingText": "Marketing is more than just an Instagram post",
+    "sectionTitle": "Se non sei visto, non esisti. E sui social, non esistono mezze misure.",
+    "paragraph1": "Ogni post, ogni storia, ogni contenuto che pubblichi parla di te. Racconta chi sei, cosa rappresenti e come vuoi essere percepito. I social non sono solo post e like: sono il megafono del tuo brand, il luogo dove le persone decidono in pochi secondi se amarti o ignorarti.",
+    "paragraph2": "Gestire i social in modo efficace significa non lasciare nulla al caso. Significa trasformare l'identità del brand in esperienze visive e narrative coerenti, strategiche e coinvolgenti. Vuol dire capire il pubblico che vuoi raggiungere, i messaggi che lo colpiscono e i formati che catturano la sua attenzione. Ogni like, commento, condivisione e visualizzazione diventa un'opportunità di crescita: di visibilità, di autorevolezza, di relazione diretta con chi può diventare cliente, partner o ambassador del tuo brand.",
+    "paragraph3": "I benefici di una gestione social curata sono concreti e misurabili. Non si tratta solo di apparire belli: si tratta di creare fiducia, desiderio e riconoscibilità. Un profilo coerente e strategico aumenta la credibilità del brand, rende i prodotti o servizi più desiderabili e intercetta il pubblico giusto, nel momento giusto.",
+    "paragraph4": "Gestire i social al meglio significa trasformarli in un motore di crescita, engagement e risultati concreti. Non basta esserci: bisogna essere memorabili.",
+    "whatYouNeedTitle": "Ciò di cui hai bisogno è",
+    "whatYouNeedDescription": "I social media sono uno strumento essenziale per la comunicazione dei brand. Permettono di raccontare l'identità, condividere valori e creare un contatto diretto con il pubblico, contribuendo a rafforzare visibilità, riconoscibilità e posizionamento online.",
+    "card1": "Una buona strategia per definire obiettivi chiari e misurabili sui social media.",
+    "card2": "Un'identità visiva che garantisce la riconoscibilità del brand sui social.",
+    "card3": "Creare contenuti accattivanti e coerenti con i valori del tuo brand.",
+    "card4": "Definire un tono di voce per trasmettere il messaggio in modo chiaro ed efficace."
   },
   "footer": {
     "rights": "Tutti i diritti riservati"
@@ -45,18 +69,22 @@
     "english": "English"
   },
   "homeHeader": {
-    "introTitle": "Ita Lorem ipsum dolor sit amet",
-    "headerTitle": "Ita Your Marketing should feel seamless, stress-free & simple",
-    "subtitle": "Ita Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "introTitle": "Il tuo brand è pronto per un restyling a cinque stelle",
+    "headerTitle": "Trasforma il tuo brand in una presenza unica, coerente e impossibile da ignorare.",
+    "subtitle": "In un mercato dove tutti parlano, noi facciamo in modo che tu venga ascoltato.",
+    "scrollingText": "Marketing is thinking, not just posting."
   },
   "welcomeSection": {
     "title": "Welcome to Studio Mua",
     "paragraph1": "Attraverso una combinazione strategica di Social Media Management, Content Creation professionale e Graphic Design su misura, costruiamo un'immagine che non solo funziona, ma conquista.",
     "paragraph2": "Crediamo che ogni brand meriti una presenza digitale che rispecchi la sua personalità, i suoi valori e le sue ambizioni. Per questo sviluppiamo contenuti autentici, visual curati e una comunicazione pensata per generare engagement, rafforzare l'identità e aumentare la visibilità.",
     "paragraph3": "Con Studio Mua il tuo brand non diventa semplicemente \"più bello\": diventa immediato, riconoscibile e capace di attrarre l'attenzione giusta. È la scelta ideale per chi vuole distinguersi davvero, affermare la propria presenza sui social e costruire una community forte e partecipe.",
-    "closingTitle": "Perché oggi non basta esserci: serve lasciare il segno."
+    "closingTitle": "Perché oggi non basta esserci: serve lasciare il segno.",
+    "ctaText": "QUA TI POSSO AIUTARE"
   },
   "manifestoSection": {
+    "title": "Heya, sono Cecilia!",
+    "subtitle": "Sono solo una ragazza con delle idee.",
     "paragraph1": "Non sono qui per seguire i trend: sono qui per crearli.",
     "paragraph2": "Disegno identità, plasmo immaginari, trasformo brand timidi in presenze che non puoi ignorare. Sono quella che vede prima, immagina meglio e realizza tutto con uno stile che non chiede il permesso di esistere.",
     "paragraph3": "Grafica, contenuti, social, strategie: prendo ciò che hai e lo porto dove non avresti mai pensato, ma dove il tuo brand merita di stare.",
@@ -65,20 +93,28 @@
   "cardCarousel": {
     "title": "Our Vision",
     "card1": {
-      "title": "Bold not random",
-      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+      "title": "Entusiasmo",
+      "text": "Mettiamo energia e passione in ogni progetto, affrontando ogni sfida con curiosità."
     },
     "card2": {
-      "title": "Bold not random",
-      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+      "title": "Design with intention",
+      "text": "Non c'è bellezza senza sostanza. Ogni scelta ha uno scopo chiaro: comunicare, emozionare e lasciare impatto."
     },
     "card3": {
-      "title": "Bold not random",
-      "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+      "title": "Multidisciplinare",
+      "text": "Comunicazione, design, strategia e storytelling si integrano per creare soluzioni coerenti e complete."
     },
     "card4": {
-      "title": "Bold not random",
+      "title": "Originale",
+      "text": "Ogni progetto è creato su misura: unico, riconoscibile e mai replicabile."
+    },
+    "card5": {
+      "title": "Bold, not random",
       "text": "Ci spingiamo oltre, ma con criterio. L'audacia ha senso solo quando è guidata dalla visione, non dal caso."
+    },
+    "card6": {
+      "title": "Attenzione",
+      "text": "Cogliamo ogni dettaglio e sfumatura, ascoltando davvero per trasformare le idee in risultati concreti."
     }
   },
   "newFooter": {
@@ -90,19 +126,25 @@
     "office": "Our fancy office"
   },
   "marketingCards": {
-    "icebreaker": {
-      "title": "The Icebreaker",
-      "subtitle": "Strategy • Concept",
+    "graphicDesigner": {
+      "keywords": "Creatività • Esclusivo",
+      "title": "Graphic Design",
+      "subtitle": "I grandi brand non si vedono soltanto (si sentono)",
+      "text": "I migliori brand non sono solo belli da guardare. Emozionano. Creano momenti. Costruiscono eredità.",
       "cta": "Scopri di più"
     },
-    "partyStarter": {
-      "title": "The Party Starter",
-      "subtitle": "Planning • Launch",
+    "socialMediaManager": {
+      "keywords": "Strategia • Impatto",
+      "title": "Social Media Manager",
+      "subtitle": "Stai al passo con i trend",
+      "text": "Pubblicando contenuti che rispecchiano i valori del tuo brand e parlano davvero al tuo pubblico.",
       "cta": "Scopri di più"
     },
-    "vault": {
-      "title": "The Vault",
-      "subtitle": "Done-for-you",
+    "contentCreator": {
+      "keywords": "Storia • Idea",
+      "title": "Content creator",
+      "subtitle": "Lascia che i tuoi contenuti raccontino una storia",
+      "text": "Le persone non comprano te: comprano la storia che racconti per loro.",
       "cta": "Scopri di più"
     }
   }

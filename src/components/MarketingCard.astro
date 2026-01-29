@@ -2,8 +2,10 @@
 import SvgShield from "./svg/SvgShield.astro";
 
 export type Props = {
+  keywords?: string;
   title?: string;
   subtitle?: string;
+  text?: string;
   body?: string;
   cta?: string;
   href?: string;
@@ -12,14 +14,18 @@ export type Props = {
 };
 
 const {
+  keywords = "",
   title = "The Icebreaker",
   subtitle = "Lorem ipsum",
+  text = "",
   body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   cta = "Get started",
   href,
   class: className,
   color,
 } = Astro.props;
+
+const displayBody = text || body;
 
 const ctaColorClass = color ? `card__cta--${color}` : "";
 // Inline styles to guarantee correct colors regardless of cascade
@@ -60,11 +66,12 @@ if (color === "pink") {
   />
 
   <header class="card__header">
-    <p class="card__subtitle">{subtitle}</p>
+    {keywords && <p class="card__keywords">{keywords}</p>}
     <h3 class="card__title">{title}</h3>
+    {subtitle && <p class="card__subtitle">{subtitle}</p>}
   </header>
 
-  <p class="card__body">{body}</p>
+  <p class="card__body">{displayBody}</p>
 
   {
     href ? (
@@ -119,6 +126,16 @@ if (color === "pink") {
     display: flex;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .card__keywords {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.2px;
+    color: var(--brown);
+    opacity: 0.85;
   }
 
   .card__subtitle {

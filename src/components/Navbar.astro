@@ -72,13 +72,26 @@ const t = translations.default;
     });
 
     // Evidenzia la voce di menu della pagina corrente
-    const currentPath = window.location.pathname;
+    let currentPath = window.location.pathname;
+    // Normalizza il path rimuovendo la trailing slash se presente (tranne per la root)
+    if (currentPath !== '/' && currentPath.endsWith('/')) {
+      currentPath = currentPath.slice(0, -1);
+    }
+    
     const navItems = document.querySelectorAll(".nav-item");
 
     navItems.forEach((item) => {
-      const href = item.getAttribute("href");
-      if (href && currentPath === href) {
-        item.classList.add("active-page");
+      let href = item.getAttribute("href");
+      if (href) {
+        // Normalizza anche l'href rimuovendo la trailing slash se presente (tranne per la root)
+        if (href !== '/' && href.endsWith('/')) {
+          href = href.slice(0, -1);
+        }
+        
+        // Confronta i path normalizzati
+        if (currentPath === href) {
+          item.classList.add("active-page");
+        }
       }
     });
   });

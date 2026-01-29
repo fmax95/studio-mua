@@ -1,23 +1,48 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import CookieBanner from "../components/CookieBanner.astro";
+import SEO from "../components/SEO.astro";
 import "../styles/global.css";
 
 interface Props {
-  title?: string;
+  title: string;
+  description: string;
+  keywords?: string;
   lang?: "it" | "en";
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title = "Studio Mua", lang = "it" } = Astro.props;
+const { 
+  title, 
+  description, 
+  keywords, 
+  lang = "it",
+  canonical,
+  ogImage,
+  noindex = false
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Component -->
+    <SEO 
+      title={title}
+      description={description}
+      keywords={keywords}
+      lang={lang}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+    />
     
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,8 +53,6 @@ const { title = "Studio Mua", lang = "it" } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@300;400;600&family=Allura&display=swap"
       rel="stylesheet"
     />
-    
-    <title>{title}</title>
   </head>
   
   <body>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage IT -->
+  <url>
+    <loc>https://studiomuadesign.it/</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/" />
+  </url>
+
+  <!-- Homepage EN -->
+  <url>
+    <loc>https://studiomuadesign.it/en/</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/" />
+  </url>
+
+  <!-- Graphic Designer IT -->
+  <url>
+    <loc>https://studiomuadesign.it/graphic-designer</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/graphic-designer" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/graphic-designer" />
+  </url>
+
+  <!-- Graphic Designer EN -->
+  <url>
+    <loc>https://studiomuadesign.it/en/graphic-designer</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/graphic-designer" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/graphic-designer" />
+  </url>
+
+  <!-- Social Media Manager IT -->
+  <url>
+    <loc>https://studiomuadesign.it/social-media-manager</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/social-media-manager" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/social-media-manager" />
+  </url>
+
+  <!-- Social Media Manager EN -->
+  <url>
+    <loc>https://studiomuadesign.it/en/social-media-manager</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/social-media-manager" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/social-media-manager" />
+  </url>
+
+  <!-- Content Creator IT -->
+  <url>
+    <loc>https://studiomuadesign.it/content-creator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/content-creator" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/content-creator" />
+  </url>
+
+  <!-- Content Creator EN -->
+  <url>
+    <loc>https://studiomuadesign.it/en/content-creator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/content-creator" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/content-creator" />
+  </url>
+
+</urlset>

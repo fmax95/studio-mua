@@ -1,0 +1,132 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  keywords?: string;
+  ogType?: string;
+  ogImage?: string;
+  lang?: "it" | "en";
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  keywords,
+  ogType = "website",
+  ogImage = "/logo.svg",
+  lang = "it",
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = "https://studiomuadesign.it";
+const fullCanonical = canonical || `${siteUrl}${Astro.url.pathname}`;
+const fullOgImage = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
+
+// Business info
+const businessName = "Studio Mua";
+const founderName = "Cecilia";
+const address = "Via del Torretto 31, 19121 La Spezia, Italia";
+const phone = "";
+const email = "studiomua@yahoo.com";
+const instagram = "https://www.instagram.com/studiomua_design";
+const linkedin = "https://www.linkedin.com/company/studio-mua-design";
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+{keywords && <meta name="keywords" content={keywords} />}
+<link rel="canonical" href={fullCanonical} />
+<meta name="language" content={lang} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:locale" content={lang === "it" ? "it_IT" : "en_US"} />
+<meta property="og:site_name" content={businessName} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={fullCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Additional Meta Tags -->
+<meta name="author" content={`${businessName} - ${founderName}`} />
+<meta name="geo.region" content="IT-SP" />
+<meta name="geo.placename" content="La Spezia" />
+<meta name="geo.position" content="44.102665;9.824076" />
+<meta name="ICBM" content="44.102665, 9.824076" />
+
+<!-- Schema.org Local Business -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": businessName,
+  "image": fullOgImage,
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via del Torretto 31",
+    "addressLocality": "La Spezia",
+    "postalCode": "19121",
+    "addressCountry": "IT"
+  },
+  "email": email,
+  "founder": {
+    "@type": "Person",
+    "name": founderName,
+    "jobTitle": "Founder & Designer"
+  },
+  "sameAs": [
+    instagram,
+    linkedin
+  ],
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "La Spezia"
+  },
+  "serviceType": [
+    "Graphic Design",
+    "Social Media Management",
+    "Content Creation",
+    "Brand Identity",
+    "Digital Marketing"
+  ]
+})} />
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": businessName,
+  "url": siteUrl,
+  "logo": fullOgImage,
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via del Torretto 31",
+    "addressLocality": "La Spezia",
+    "postalCode": "19121",
+    "addressCountry": "IT"
+  },
+  "email": email,
+  "sameAs": [
+    instagram,
+    linkedin
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": founderName
+  }
+})} />

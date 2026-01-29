@@ -1,2 +1,9 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+# Disallow privacy pages from indexing
+Disallow: /privacy
+Disallow: /en/privacy
+
+# Sitemap
+Sitemap: https://studiomuadesign.it/sitemap.xml

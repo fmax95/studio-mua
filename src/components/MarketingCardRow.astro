@@ -1,29 +1,46 @@
 ---
 import MarketingCard from "./MarketingCard.astro";
+
+// Locale & translations
+const currentLocale = Astro.currentLocale || "it";
+const translations = await import(`../i18n/${currentLocale}.json`);
+const t = translations.default;
+
 export type Props = { class?: string };
 const { class: className } = Astro.props;
+
+const url: Record<string, string> = {
+  socialMediaManager:
+    currentLocale === "en"
+      ? "/en/social-media-manager/"
+      : "/social-media-manager/",
+  graphicDesigner:
+    currentLocale === "en" ? "/en/graphic-designer/" : "/graphic-designer/",
+  contentCreator:
+    currentLocale === "en" ? "/en/content-creator/" : "/content-creator/",
+};
 ---
 
 <section class={`row ${className ?? ""}`}>
   <MarketingCard
-    title="The Icebreaker"
-    subtitle="Strategy • Concept"
-    cta="Lorem Ipsum"
-    href="/graphic-designer"
+    title={t.marketingCards.icebreaker.title}
+    subtitle={t.marketingCards.icebreaker.subtitle}
+    cta={t.marketingCards.icebreaker.cta}
+    href={url.socialMediaManager}
     color="pink"
   />
   <MarketingCard
-    title="The Party Starter"
-    subtitle="Planning • Launch"
-    cta="Lorem Ipsum"
-    href="/content-creator"
+    title={t.marketingCards.partyStarter.title}
+    subtitle={t.marketingCards.partyStarter.subtitle}
+    cta={t.marketingCards.partyStarter.cta}
+    href={url.graphicDesigner}
     color="green"
   />
   <MarketingCard
-    title="The Vault"
-    subtitle="Done-for-you"
-    cta="Lorem Ipsum"
-    href="/social-media-manager"
+    title={t.marketingCards.vault.title}
+    subtitle={t.marketingCards.vault.subtitle}
+    cta={t.marketingCards.vault.cta}
+    href={url.contentCreator}
     color="brown"
   />
 </section>

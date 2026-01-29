@@ -1,4 +1,5 @@
 ---
+import SvgItGirlEn from "../svg/SvgItGirlEn.astro";
 import SvgPinkArrowFlat from "../svg/SvgPinkArrowFlat.astro";
 
 // Locale & translations
@@ -9,7 +10,14 @@ const t = translations.default;
 
 <section class="manifesto-section">
   <div class="content-container">
-    <SvgPinkArrowFlat x="65%" y="-35%" width="100px" rotateDeg={15} zIndex={1} />
+    <SvgPinkArrowFlat
+      x="65%"
+      y="-35%"
+      width="100px"
+      rotateDeg={15}
+      zIndex={1}
+    />
+    <SvgItGirlEn x="70%" y="-55%" width="120px" rotateDeg={0} zIndex={1} />
     <p class="paragraph bold">{t.manifestoSection.paragraph1}</p>
     <p class="paragraph">{t.manifestoSection.paragraph2}</p>
     <p class="paragraph">{t.manifestoSection.paragraph3}</p>

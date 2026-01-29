@@ -1,0 +1,196 @@
+---
+import SvgSwirl from "./SvgSwirl.astro";
+import SvgGreenAsterisk from "./SvgGreenAsterisk.astro";
+
+export interface Props {
+  lang?: "it" | "en";
+}
+
+const { lang = "en" } = Astro.props;
+
+const content = {
+  it: {
+    title: "What you need is",
+    description:
+      "I social media sono uno strumento essenziale per la comunicazione dei brand. Permettono di raccontare l'identità, condividere valori e creare un contatto diretto con il pubblico, contribuendo a rafforzare visibilità, riconoscibilità e posizionamento online.",
+    cards: [
+      {
+        text: "Una <strong>buona strategia</strong> per definire obiettivi chiari e misurabili sui social media.",
+        color: "beige",
+      },
+      {
+        text: "Creare <strong>contenuti</strong> accattivanti e coerenti con i valori del tuo brand.",
+        color: "pink",
+      },
+      {
+        text: "Un'<strong>identità visiva</strong> che garantisca la riconoscibilità del brand sui social.",
+        color: "green",
+      },
+      {
+        text: "Definire un <strong>tono di voce</strong> per trasmettere il messaggio in modo chiaro ed efficace.",
+        color: "mint",
+      },
+    ],
+  },
+  en: {
+    title: "What you need is",
+    description:
+      "Social media is an essential tool for brand communication. It allows you to share your identity, convey values, and create direct contact with your audience, helping to strengthen visibility, recognition, and online positioning.",
+    cards: [
+      {
+        text: "A <strong>solid strategy</strong> to define clear and measurable goals on social media.",
+        color: "beige",
+      },
+      {
+        text: "Create <strong>engaging content</strong> that aligns with your brand values.",
+        color: "pink",
+      },
+      {
+        text: "A <strong>visual identity</strong> that ensures brand recognition on social media.",
+        color: "green",
+      },
+      {
+        text: "Define a <strong>tone of voice</strong> to convey your message clearly and effectively.",
+        color: "mint",
+      },
+    ],
+  },
+};
+
+const t = content[lang];
+---
+
+<section class="what-you-need-section">
+  <div class="what-you-need-container">
+    <h2 class="section-title script">{t.title}</h2>
+    <p class="section-description">{t.description}</p>
+
+    <div class="cards-grid">
+      <!-- Card 1 - Beige with Swirl -->
+      <div class="need-card card-beige swirl-card">
+        <SvgSwirl x="-15px" y="-15px" width="50px" height="50px" zIndex={2} color="var(--pink)" />
+        <p class="card-text" set:html={t.cards[0].text} />
+      </div>
+
+      <!-- Card 2 - Pink -->
+      <div class="need-card card-pink">
+        <p class="card-text" set:html={t.cards[1].text} />
+      </div>
+
+      <!-- Card 3 - Green -->
+      <div class="need-card card-green">
+        <p class="card-text" set:html={t.cards[2].text} />
+      </div>
+
+      <!-- Card 4 - Mint with Asterisk -->
+      <div class="need-card card-mint asterisk-card">
+        <p class="card-text" set:html={t.cards[3].text} />
+        <SvgGreenAsterisk
+          x="calc(100% - 25px)"
+          y="calc(100% - 25px)"
+          width="50px"
+          height="50px"
+          zIndex={2}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .what-you-need-section {
+    width: 100%;
+    background-color: var(--blue);
+    padding: 100px 20px 80px;
+    border-bottom: 60px solid var(--white);
+  }
+
+  .what-you-need-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: var(--font-title);
+    font-size: clamp(40px, 6vw, 70px);
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 900;
+    display: block;
+    letter-spacing: -0.03em;
+  }
+
+  .section-description {
+    color: var(--brown);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    line-height: 1.2;
+    font-size: var(--fs-body);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .need-card {
+    padding: 30px 25px;
+    border-radius: 16px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swirl-card,
+  .asterisk-card {
+    position: relative;
+    overflow: visible;
+  }
+
+  .card-beige {
+    background-color: #D7E1EA;
+  }
+
+  .card-pink {
+    background-color: var(--pink);
+  }
+
+  .card-green {
+    background-color: var(--green);
+  }
+
+  .card-mint {
+    background-color: #D7E1EA;
+  }
+
+  .card-text {
+    color: var(--brown);
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    font-size: var(--fs-body);
+  }
+
+  .card-text :global(strong) {
+    font-weight: 700;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .what-you-need-section {
+      padding: 40px 15px 60px;
+    }
+
+    .need-card {
+      padding: 25px 20px;
+    }
+  }
+</style>

@@ -24,13 +24,11 @@ const { title = "Lorem Ipsum" } = Astro.props;
     width: 100vw;
     height: 350px;
     position: relative;
-    background-image: url("/header-blue.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--blue);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 80px;
   }
 
   .inner-header-content {
@@ -47,15 +45,4 @@ const { title = "Lorem Ipsum" } = Astro.props;
     margin: 0;
   }
 
-  /* Overlay scuro opzionale per migliorare la leggibilità */
-  .inner-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-  }
 </style>

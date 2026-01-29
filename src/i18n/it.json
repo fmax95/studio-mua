@@ -73,5 +73,22 @@
     "contentCreator": "Content Creator",
     "contactUs": "Contattaci",
     "office": "Our fancy office"
+  },
+  "marketingCards": {
+    "icebreaker": {
+      "title": "The Icebreaker",
+      "subtitle": "Strategy • Concept",
+      "cta": "Scopri di più"
+    },
+    "partyStarter": {
+      "title": "The Party Starter",
+      "subtitle": "Planning • Launch",
+      "cta": "Scopri di più"
+    },
+    "vault": {
+      "title": "The Vault",
+      "subtitle": "Done-for-you",
+      "cta": "Scopri di più"
+    }
   }
 }

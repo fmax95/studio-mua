@@ -4,6 +4,11 @@ import InnerHeader from "../components/InnerHeader.astro";
 import Footer from "../components/new-ui/Footer.astro";
 import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro";
 import SvgSwosh from "../components/SvgSwosh.astro";
+import SvgDoodle from "../components/SvgDoodle.astro";
+import SvgBrandText from "../components/SvgBrandText.astro";
+import SvgNowOrNever from "../components/SvgNowOrNever.astro";
+import SvgStarCircle from "../components/SvgStarCircle.astro";
+import SvgSuperText from "../components/SvgSuperText.astro";
 import WhatYouNeedSection from "../components/WhatYouNeedSection.astro";
 import Layout from "../layouts/Layout.astro";
 import translations from "../i18n/it.json";
@@ -11,7 +16,31 @@ import translations from "../i18n/it.json";
 
 <Layout title="Studio Mua | Content Creator">
   <main>
-    <InnerHeader title="Content Creator" />
+    <InnerHeader title={translations.contentCreator.pageTitle}>
+      <SvgDoodle
+        slot="decorations"
+        x="75%"
+        y="15%"
+        rotateDeg={20}
+        zIndex={-1}
+      />
+      <SvgStarCircle
+        slot="decorations"
+        x="70%"
+        y="130%"
+        width="100px"
+        rotateDeg={-15}
+        zIndex={-1}
+      />
+      <SvgSuperText
+        slot="decorations"
+        x="5%"
+        y="75%"
+        width="150px"
+        rotateDeg={-8}
+        zIndex={-1}
+      />
+    </InnerHeader>
     <section class="text-section">
       <div class="text-container">
         <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
@@ -23,11 +52,8 @@ import translations from "../i18n/it.json";
         <SvgGreenAsterisk x="1%" y="60%" rotateDeg={-10} zIndex={0} />
 
         <h2 class="text-block-title">
-          {translations.contentCreator.pageTitle}
-        </h2>
-        <p class="text-block">
           {translations.contentCreator.sectionTitle}
-        </p>
+        </h2>
         <p class="text-block">
           {translations.contentCreator.paragraph1}
         </p>
@@ -55,7 +81,7 @@ import translations from "../i18n/it.json";
     <WhatYouNeedSection lang="it" page="contentCreator" />
 
     <FormQuote />
-    <Footer></Footer>
+    <Footer />
   </main>
 </Layout>
 

@@ -1,0 +1,64 @@
+---
+export type Props = {
+  x?: number | string;
+  y?: number | string;
+  width?: number | string;
+  height?: number | string;
+  zIndex?: number;
+  rotateDeg?: number;
+  class?: string;
+  style?: string;
+  ariaLabel?: string;
+};
+
+const {
+  x = 0,
+  y = 0,
+  width = "120px",
+  height,
+  zIndex = 1,
+  rotateDeg = 0,
+  class: className,
+  style,
+  ariaLabel = "Decorative SVG",
+} = Astro.props;
+
+const toCss = (v: number | string) => (typeof v === "number" ? `${v}px` : v);
+
+const inlineStyle = [
+  "position:absolute",
+  `left:${toCss(x)}`,
+  `top:${toCss(y)}`,
+  `z-index:${zIndex}`,
+  rotateDeg ? `transform:rotate(${rotateDeg}deg)` : "",
+  width != null ? `width:${toCss(width)}` : "",
+  height != null ? `height:${toCss(height)}` : "",
+  style ?? "",
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<div class={className} style={inlineStyle} aria-label={ariaLabel} role="img">
+  <svg xmlns="http://www.w3.org/2000/svg" id="Livello_1" data-name="Livello 1" viewBox="0 0 286.76 240.3">
+    <ellipse class="now-or-never-border" cx="143.38" cy="96.39" rx="143.78" ry="95.78" transform="translate(-8.92 14.81) rotate(-5.74)"/>
+    <ellipse class="now-or-never-fill" cx="143.38" cy="96.39" rx="125.54" ry="79.32" transform="translate(-8.92 14.81) rotate(-5.74)"/>
+    <text class="now-or-never-text" transform="translate(33.6 109.74) rotate(-5.74)"><tspan x="0" y="0">NOW OR </tspan><tspan x="29.37" y="44.95">NEVER</tspan></text>
+  </svg>
+</div>
+
+<style>
+  .now-or-never-text {
+    fill: #fffaee;
+    font-family: CSMaguire-RegularDemo, 'CS Maguire Demo';
+    font-size: 59.93px;
+  }
+
+  .now-or-never-border {
+    fill: #533a1e;
+  }
+
+  .now-or-never-fill {
+    fill: #f7c4db;
+  }
+</style>

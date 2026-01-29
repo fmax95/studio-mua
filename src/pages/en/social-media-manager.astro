@@ -4,14 +4,32 @@ import InnerHeader from "../../components/InnerHeader.astro";
 import Footer from "../../components/new-ui/Footer.astro";
 import SvgGreenAsterisk from "../../components/SvgGreenAsterisk.astro";
 import SvgSwosh from "../../components/SvgSwosh.astro";
+import SvgDoodle from "../../components/SvgDoodle.astro";
 import WhatYouNeedSection from "../../components/WhatYouNeedSection.astro";
 import Layout from "../../layouts/Layout.astro";
 import translations from "../../i18n/en.json";
+import SvgNowOrNever from "../../components/SvgNowOrNever.astro";
 ---
 
 <Layout title="Studio Mua | Social Media Manager">
   <main>
-    <InnerHeader title="Social Media Manager" />
+    <InnerHeader title={translations.socialMediaManager.pageTitle}>
+      <SvgDoodle
+        slot="decorations"
+        x="8%"
+        y="65%"
+        rotateDeg={-15}
+        zIndex={-1}
+      />
+      <SvgNowOrNever
+        slot="decorations"
+        x="72%"
+        y="5%"
+        width="140px"
+        rotateDeg={10}
+        zIndex={-1}
+      />
+    </InnerHeader>
     <section class="text-section">
       <div class="text-container">
         <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
@@ -23,11 +41,8 @@ import translations from "../../i18n/en.json";
         <SvgGreenAsterisk x="1%" y="60%" rotateDeg={-10} zIndex={0} />
 
         <h2 class="text-block-title">
-          {translations.socialMediaManager.pageTitle}
-        </h2>
-        <p class="text-block">
           {translations.socialMediaManager.sectionTitle}
-        </p>
+        </h2>
         <p class="text-block">
           {translations.socialMediaManager.paragraph1}
         </p>
@@ -58,7 +73,7 @@ import translations from "../../i18n/en.json";
     <WhatYouNeedSection lang="en" page="socialMediaManager" />
 
     <FormQuote />
-    <Footer></Footer>
+    <Footer />
   </main>
 </Layout>
 

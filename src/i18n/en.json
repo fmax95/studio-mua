@@ -11,15 +11,30 @@
   },
   "contentCreator": {
     "title": "Content Creator",
-    "description": "Professional services for content creators"
+    "description": "Professional services for content creators",
+    "pageTitle": "Content is never enough. It has to be the right content.",
+    "paragraph1": "Today everyone creates content, but few truly know how to tell a story. The difference lies in strategy, attention to detail, and the ability to transform every post into an opportunity for authentic connection.",
+    "paragraph2": "As content creators, we develop original, engaging content aligned with your brand identity. Photos, videos, graphics, and texts designed to generate engagement, strengthen your digital presence, and build a loyal community.",
+    "paragraph3": "We don't produce random content: we study your audience, identify relevant trends, and create materials that communicate effectively. Every piece of content is designed to leave a mark.",
+    "paragraph4": "Because in the world of social media, you either capture attention or get scrolled past. And we make sure they stop to look."
   },
   "graphicDesigner": {
     "title": "Graphic Designer",
-    "description": "Creative graphic design solutions"
+    "description": "Creative graphic design solutions",
+    "pageTitle": "If you're not seen, you don't exist. And on social media, there are no half measures.",
+    "paragraph1": "In a world where image is everything, graphic design isn't just an aesthetic detail—it's the tool that transforms a brand into a memorable visual experience.",
+    "paragraph2": "Every graphic element must communicate with precision and impact: from logos to social media posts, from promotional graphics to digital materials. Everything must be consistent, recognizable, and strategically crafted.",
+    "paragraph3": "With Studio Mua, your brand gains a strong and distinctive visual identity, capable of capturing attention and leaving a lasting impression. We create designs that don't go unnoticed.",
+    "paragraph4": "Because in the digital world, first impressions are what count. And we make them unforgettable."
   },
   "socialMediaManager": {
     "title": "Social Media Manager",
-    "description": "Professional social media management"
+    "description": "Professional social media management",
+    "pageTitle": "Social media doesn't manage itself. And improvising isn't a strategy.",
+    "paragraph1": "Being present on social media isn't enough: you need a clear strategy, consistent planning, and the ability to transform every interaction into a growth opportunity.",
+    "paragraph2": "As social media managers, we handle everything: from editorial planning to content creation, from daily management to performance analysis. We monitor trends, optimize communication, and build a digital presence that generates concrete results.",
+    "paragraph3": "With Studio Mua, your social media becomes a strategic marketing tool, capable of attracting new customers, building community loyalty, and strengthening your brand reputation.",
+    "paragraph4": "Because managing social media is a full-time job. And we do it for you, with method and creativity."
   },
   "footer": {
     "rights": "All rights reserved"

@@ -11,15 +11,30 @@
   },
   "contentCreator": {
     "title": "Content Creator",
-    "description": "Servizi professionali per content creator"
+    "description": "Servizi professionali per content creator",
+    "pageTitle": "I contenuti non sono mai abbastanza. Devono essere i contenuti giusti.",
+    "paragraph1": "Oggi tutti creano contenuti, ma pochi sanno davvero raccontare. La differenza sta nella strategia, nella cura del dettaglio e nella capacità di trasformare ogni post in un'opportunità di connessione autentica.",
+    "paragraph2": "Come content creator, sviluppiamo contenuti originali, coinvolgenti e allineati alla tua identità di brand. Foto, video, grafiche e testi pensati per generare engagement, rafforzare la tua presenza digitale e costruire una community fedele.",
+    "paragraph3": "Non produciamo contenuti a caso: studiamo il tuo pubblico, individuiamo i trend rilevanti e creiamo materiali che comunicano con efficacia. Ogni contenuto è progettato per lasciare il segno.",
+    "paragraph4": "Perché nel mondo dei social, o catturi l'attenzione o vieni scrollato via. E noi facciamo in modo che ti fermino a guardare."
   },
   "graphicDesigner": {
     "title": "Graphic Designer",
-    "description": "Soluzioni di design grafico creative"
+    "description": "Soluzioni di design grafico creative",
+    "pageTitle": "Se non ti vedono, non esisti. E sui social, mezze misure non ne esistono.",
+    "paragraph1": "In un mondo dove l'immagine è tutto, il graphic design non è solo un dettaglio estetico, ma lo strumento che trasforma un brand in un'esperienza visiva memorabile.",
+    "paragraph2": "Ogni elemento grafico deve comunicare con precisione e impatto: dal logo ai post social, dalle grafiche promozionali ai materiali digitali. Tutto deve essere coerente, riconoscibile e strategicamente pensato.",
+    "paragraph3": "Con Studio Mua, il tuo brand acquisisce un'identità visiva forte e distintiva, capace di catturare l'attenzione e lasciare un'impressione duratura. Creiamo design che non passano inosservati.",
+    "paragraph4": "Perché nel digitale, la prima impressione è quella che conta. E noi la facciamo indimenticabile."
   },
   "socialMediaManager": {
     "title": "Social Media Manager",
-    "description": "Gestione professionale dei social media"
+    "description": "Gestione professionale dei social media",
+    "pageTitle": "I social non si gestiscono da soli. E improvvisare non è una strategia.",
+    "paragraph1": "Essere presenti sui social non basta: serve una strategia chiara, una pianificazione costante e la capacità di trasformare ogni interazione in un'opportunità di crescita.",
+    "paragraph2": "Come social media manager, ci occupiamo di tutto: dalla pianificazione editoriale alla creazione dei contenuti, dalla gestione quotidiana all'analisi delle performance. Monitoriamo i trend, ottimizziamo la comunicazione e costruiamo una presenza digitale che genera risultati concreti.",
+    "paragraph3": "Con Studio Mua, i tuoi social diventano uno strumento strategico di marketing, capace di attrarre nuovi clienti, fidelizzare la community e rafforzare la reputazione del tuo brand.",
+    "paragraph4": "Perché gestire i social è un lavoro a tempo pieno. E noi lo facciamo al posto tuo, con metodo e creatività."
   },
   "footer": {
     "rights": "Tutti i diritti riservati"

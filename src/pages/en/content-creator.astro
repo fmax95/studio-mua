@@ -14,48 +14,39 @@ import SvgBrandLogo from "../../components/SvgBrandLogo.astro";
 import SvgDoodle from "../../components/SvgDoodle.astro";
 ---
 
-<Layout 
+<Layout
   title="Professional Content Creation La Spezia | Studio Mua"
   description="Content creation services in La Spezia: high-quality images, videos, graphics, and copy for your brand. Strategic content that engages, excites, and converts."
   keywords="content creator la spezia, content creation, video marketing, copywriting, content strategy, product photography, social graphics"
   lang="en"
 >
   <main>
-    <InnerHeader title={translations.contentCreator.pageTitle}>
-      <SvgDoodle
-        slot="decorations"
-        x="75%"
-        y="15%"
-        rotateDeg={20}
-        zIndex={-1}
-      />
-      <SvgStarCircle
-        slot="decorations"
-        x="70%"
-        y="130%"
-        width="100px"
-        rotateDeg={-15}
-        zIndex={-1}
-      />
-      <SvgSuperText
-        slot="decorations"
-        x="5%"
-        y="75%"
-        width="150px"
-        rotateDeg={-8}
-        zIndex={-1}
-      />
+    <InnerHeader
+      title={translations.contentCreator.pageTitle}
+      loopText="Tell a story"
+    >
+      <!-- Desktop Version -->
+      <div slot="decorations" class="desktop-only">
+        <SvgDoodle x="78%" y="15%" rotateDeg={20} zIndex={-1} />
+
+        <SvgSuperText
+          x="16%"
+          y="75%"
+          width="150px"
+          rotateDeg={-8}
+          zIndex={-1}
+        />
+      </div>
+      <!-- Mobile & Tablet Version -->
+      <div slot="decorations" class="mobile-tablet-only">
+        <SvgDoodle x="74%" y="15%" rotateDeg={20} zIndex={-1} width="70px" />
+
+        <SvgSuperText x="4%" y="75%" width="100px" rotateDeg={-8} zIndex={-1} />
+      </div>
     </InnerHeader>
     <section class="text-section">
+      <SvgStarCircle x="79%" y="-8%" width="100px" rotateDeg={-15} zIndex={1} />
       <div class="text-container">
-        <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
-        <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
-        <SvgGreenAsterisk x="80%" y="60%" rotateDeg={-10} zIndex={0} />
-        <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
-        <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
-        <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
-        <SvgGreenAsterisk x="1%" y="60%" rotateDeg={-10} zIndex={0} />
-
         <h2 class="text-block-title">
           {translations.contentCreator.sectionTitle}
         </h2>
@@ -96,7 +87,6 @@ import SvgDoodle from "../../components/SvgDoodle.astro";
     position: relative;
     padding: 80px 0;
     background-color: var(--blue-light) !important;
-    border-top: 60px solid var(--white) !important;
   }
   .text-container {
     max-width: 800px;
@@ -132,5 +122,23 @@ import SvgDoodle from "../../components/SvgDoodle.astro";
     width: 100%;
     height: 50px;
     display: block;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-tablet-only {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-tablet-only {
+      display: block;
+    }
   }
 </style>

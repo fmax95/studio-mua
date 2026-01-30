@@ -42,29 +42,29 @@ const content = {
 
 <section class="what-you-need-section">
   <div class="what-you-need-container">
-    <h2 class="section-title script">{content.title}</h2>
+    <h1 class="section-title script">{content.title}</h1>
     <p class="section-description">{content.description}</p>
 
     <div class="cards-grid">
       <!-- Card 1 - Beige with Swirl -->
       <div class="need-card card-beige swirl-card">
         <SvgSwirl x="-15px" y="-15px" width="50px" height="50px" zIndex={2} color="var(--pink)" />
-        <p class="card-text">{content.cards[0].text}</p>
+        <p class="card-text" set:html={content.cards[0].text}></p>
       </div>
 
       <!-- Card 2 - Pink -->
       <div class="need-card card-pink">
-        <p class="card-text">{content.cards[1].text}</p>
+        <p class="card-text" set:html={content.cards[1].text}></p>
       </div>
 
       <!-- Card 3 - Green -->
       <div class="need-card card-green">
-        <p class="card-text">{content.cards[2].text}</p>
+        <p class="card-text" set:html={content.cards[2].text}></p>
       </div>
 
       <!-- Card 4 - Mint with Asterisk -->
       <div class="need-card card-mint asterisk-card">
-        <p class="card-text">{content.cards[3].text}</p>
+        <p class="card-text" set:html={content.cards[3].text}></p>
         <SvgGreenAsterisk
           x="calc(100% - 25px)"
           y="calc(100% - 25px)"
@@ -92,7 +92,7 @@ const content = {
 
   .section-title {
     font-family: var(--font-title);
-    font-size: clamp(40px, 6vw, 70px);
+    font-size: var(--fs-h1);
     color: var(--brown);
     text-align: center;
     margin-bottom: 60px;

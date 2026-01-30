@@ -18,7 +18,15 @@ const t = translations.default;
     </h1>
     <p class="header-subtitle">{t.homeHeader.subtitle}</p>
   </div>
-  <div class="white-bend"></div>
+  <div class="white-bend">
+    <div class="message-loop">
+      <div class="loop-content">
+        <span> Marketing is thinking, not just posting.</span>
+        <span> Marketing is thinking, not just posting.</span>
+        <span> Marketing is thinking, not just posting.</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -32,8 +40,8 @@ const t = translations.default;
 
   .white-bend {
     width: 100%;
-    height: 50px;
-    background-color: var(--white);
+    /* height: 50px; */
+    background-color: var(--yellow);
   }
 
   .header-content {
@@ -49,6 +57,7 @@ const t = translations.default;
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
+    font-style: italic;
   }
 
   .header-title {
@@ -62,5 +71,101 @@ const t = translations.default;
     color: var(--brown);
     position: relative;
     z-index: 2;
+  }
+</style>
+<style>
+  .message-loop {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    background-color: var(--yellow) !important;
+    color: var(--brown);
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .loop-content {
+    display: inline-block;
+    animation: scroll 25s linear infinite;
+  }
+
+  .loop-content span {
+    display: inline-block;
+    padding: 0 50px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .message-loop h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  @media (max-width: 720px) {
+    .message-loop {
+      padding: 12px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* nessuna regola specifica per message-loop in mobile qui */
+  }
+  .message-loop {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    background-color: var(--white);
+    color: var(--brown);
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .loop-content {
+    display: inline-block;
+    animation: scroll 25s linear infinite;
+  }
+
+  .loop-content span {
+    display: inline-block;
+    padding: 0 50px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .message-loop h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  @media (max-width: 720px) {
+    .message-loop {
+      padding: 12px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* nessuna regola specifica per message-loop in mobile qui */
   }
 </style>

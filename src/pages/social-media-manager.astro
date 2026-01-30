@@ -12,55 +12,62 @@ import translations from "../i18n/it.json";
 import SvgNowOrNever from "../components/SvgNowOrNever.astro";
 ---
 
-<Layout 
+<Layout
   title="Social Media Manager La Spezia | Gestione Social Professionale | Studio Mua"
   description="Social media manager a La Spezia per la gestione strategica dei tuoi canali social. Contenuti coinvolgenti, strategie efficaci e crescita della community per il tuo brand."
   keywords="social media manager la spezia, gestione social media, marketing digitale, instagram marketing, strategia social, community management, content planning"
   lang="it"
 >
   <main>
-    <InnerHeader title={translations.socialMediaManager.pageTitle}>
-      <SvgDoodle
-        slot="decorations"
-        x="8%"
-        y="65%"
-        rotateDeg={-15}
-        zIndex={-1}
-      />
-      <SvgNowOrNever
-        slot="decorations"
-        x="72%"
-        y="5%"
-        width="140px"
-        rotateDeg={10}
-        zIndex={-1}
-      />
+    <InnerHeader
+      title={translations.socialMediaManager.pageTitle}
+      loopText="Marketing is more than just an Instagram post"
+    >
+      <!-- Desktop Version -->
+      <div slot="decorations" class="desktop-only">
+        <SvgDoodle x="16%" y="65%" rotateDeg={-15} zIndex={-1} />
+        <SvgNowOrNever
+          x="78%"
+          y="5%"
+          width="140px"
+          rotateDeg={10}
+          zIndex={-1}
+        />
+      </div>
+      <!-- Mobile & Tablet Version -->
+      <div slot="decorations" class="mobile-tablet-only">
+        <SvgDoodle x="4%" y="65%" rotateDeg={-15} zIndex={-1} width="70px" />
+        <SvgNowOrNever
+          x="72%"
+          y="5%"
+          width="140px"
+          rotateDeg={10}
+          zIndex={-1}
+          width="100px"
+        />
+      </div>
     </InnerHeader>
     <section class="text-section">
       <div class="text-container">
-        <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
-        <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
-        <SvgGreenAsterisk x="80%" y="60%" rotateDeg={-10} zIndex={0} />
-        <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
-        <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
-        <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
-        <SvgGreenAsterisk x="1%" y="60%" rotateDeg={-10} zIndex={0} />
-
         <h2 class="text-block-title">
           {translations.socialMediaManager.sectionTitle}
         </h2>
-        <p class="text-block">
-          {translations.socialMediaManager.paragraph1}
-        </p>
-        <p class="text-block">
-          {translations.socialMediaManager.paragraph2}
-        </p>
-        <p class="text-block">
-          {translations.socialMediaManager.paragraph3}
-        </p>
-        <p class="text-block text-block-bottom">
-          {translations.socialMediaManager.paragraph4}
-        </p>
+        <p
+          class="text-block"
+          set:html={translations.socialMediaManager.paragraph1}
+        />
+        <p
+          class="text-block"
+          set:html={translations.socialMediaManager.paragraph2}
+        />
+        <p
+          class="text-block"
+          set:html={translations.socialMediaManager.paragraph3}
+        />
+        <p
+          class="text-block text-block-bottom"
+          set:html={translations.socialMediaManager.paragraph4}
+        />
       </div>
     </section>
     <div class="waves-container">
@@ -89,7 +96,6 @@ import SvgNowOrNever from "../components/SvgNowOrNever.astro";
     position: relative;
     padding: 80px 0;
     background-color: var(--blue-light) !important;
-    border-top: 60px solid var(--white) !important;
   }
   .text-container {
     max-width: 800px;
@@ -125,5 +131,23 @@ import SvgNowOrNever from "../components/SvgNowOrNever.astro";
     width: 100%;
     height: 50px;
     display: block;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-tablet-only {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-tablet-only {
+      display: block;
+    }
   }
 </style>

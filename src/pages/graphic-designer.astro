@@ -11,40 +11,36 @@ import Layout from "../layouts/Layout.astro";
 import translations from "../i18n/it.json";
 ---
 
-<Layout 
+<Layout
   title="Graphic Designer La Spezia | Brand Identity e Logo Design | Studio Mua"
   description="Graphic designer professionista a La Spezia. Creazione brand identity, logo design, materiale grafico e visual identity coerente. Design strategico per distinguerti dalla concorrenza."
   keywords="graphic designer la spezia, grafico professionista, brand identity, logo design, visual identity, design grafico, creazione logo, restyling brand"
   lang="it"
 >
   <main>
-    <InnerHeader title={translations.graphicDesigner.pageTitle}>
-      <SvgBrandText
-        slot="decorations"
-        x="15%"
-        y="75%"
-        width="150px"
-        rotateDeg={15}
-        zIndex={-1}
-      />
-      <SvgDoodle
-        slot="decorations"
-        x="80%"
-        y="10%"
-        rotateDeg={-20}
-        zIndex={-1}
-      />
+    <InnerHeader
+      title={translations.graphicDesigner.pageTitle}
+      loopText="Design for people"
+    >
+      <!-- Desktop Version -->
+      <div slot="decorations" class="desktop-only">
+        <SvgBrandText
+          x="16%"
+          y="75%"
+          width="150px"
+          rotateDeg={15}
+          zIndex={-1}
+        />
+        <SvgDoodle x="78%" y="7%" rotateDeg={-20} zIndex={-1} />
+      </div>
+      <!-- Mobile & Tablet Version -->
+      <div slot="decorations" class="mobile-tablet-only">
+        <SvgBrandText x="4%" y="75%" width="100px" rotateDeg={15} zIndex={-1} />
+        <SvgDoodle x="74%" y="6%" rotateDeg={-20} zIndex={-1} width="70px" />
+      </div>
     </InnerHeader>
     <section class="text-section">
       <div class="text-container">
-        <SvgSwosh x="55%" y="2%" rotateDeg={-5} zIndex={0} />
-        <SvgSwosh x="5%" y="13%" rotateDeg={-25} zIndex={0} />
-        <SvgGreenAsterisk x="80%" y="60%" rotateDeg={-10} zIndex={0} />
-        <SvgSwosh x="10%" y="17%" rotateDeg={+25} zIndex={0} />
-        <SvgSwosh x="70%" y="71%" rotateDeg={-25} zIndex={0} />
-        <SvgSwosh x="39%" y="50%" rotateDeg={-12} zIndex={0} />
-        <SvgGreenAsterisk x="1%" y="60%" rotateDeg={-10} zIndex={0} />
-
         <h2 class="text-block-title">
           {translations.graphicDesigner.sectionTitle}
         </h2>
@@ -57,9 +53,10 @@ import translations from "../i18n/it.json";
         <p class="text-block">
           {translations.graphicDesigner.paragraph3}
         </p>
-        <p class="text-block text-block-bottom">
-          {translations.graphicDesigner.paragraph4}
-        </p>
+        <p
+          class="text-block text-block-bottom"
+          set:html={translations.graphicDesigner.paragraph4}
+        />
       </div>
     </section>
     <div class="waves-container">
@@ -88,7 +85,6 @@ import translations from "../i18n/it.json";
     position: relative;
     padding: 80px 0;
     background-color: var(--blue-light) !important;
-    border-top: 60px solid var(--white) !important;
   }
   .text-container {
     max-width: 800px;
@@ -124,5 +120,23 @@ import translations from "../i18n/it.json";
     width: 100%;
     height: 50px;
     display: block;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-tablet-only {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-tablet-only {
+      display: block;
+    }
   }
 </style>

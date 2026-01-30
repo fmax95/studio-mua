@@ -12,12 +12,12 @@ const t = translations.default;
 
 <section class="welcome-section">
   <div class="content-container">
-    <SvgPinkArrow x="-25%" y="2%" width="150px" rotateDeg={0} zIndex={1} />
+    <SvgPinkArrow x="-28%" y="2%" width="150px" rotateDeg={0} zIndex={1} />
     <h2 class="main-title">{t.welcomeSection.title}</h2>
-    <p class="paragraph">{t.welcomeSection.paragraph1}</p>
-    <p class="paragraph">{t.welcomeSection.paragraph2}</p>
-    <p class="paragraph">{t.welcomeSection.paragraph3}</p>
-    <h3 class="closing-title">{t.welcomeSection.closingTitle}</h3>
+    <p class="paragraph" set:html={t.welcomeSection.paragraph1}></p>
+    <p class="paragraph" set:html={t.welcomeSection.paragraph2}></p>
+    <p class="paragraph" set:html={t.welcomeSection.paragraph3}></p>
+    <h3 class="closing-title" set:html={t.welcomeSection.closingTitle}></h3>
     <SvgGreenArrow x="70%" y="93%" width="120px" rotateDeg={0} zIndex={1} />
     <div class="svg-text-home">
       {

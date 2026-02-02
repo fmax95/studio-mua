@@ -1,4 +1,3 @@
-foo
 # Astro Starter Kit: Basics
 
 ```sh

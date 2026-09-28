@@ -80,7 +80,14 @@
     "paragraph2": "We believe every brand deserves a digital presence that reflects its personality, values, and ambitions. That's why we develop authentic content, carefully curated visuals, and communication designed to generate engagement, strengthen brand identity, and increase visibility.",
     "paragraph3": "With Studio Mua, your brand doesn't simply become \"more beautiful\": it becomes immediate, recognizable, and capable of attracting the right attention. It's the ideal choice for those who want to truly stand out, establish a strong social media presence, and build an engaged, loyal community.",
     "closingTitle": "Because today, being present isn't enough: you need to leave a mark.",
-    "ctaText": "WHERE I CAN HELP"
+    "ctaText": "WHERE I CAN HELP",
+    "projectsCta": "Discover the projects"
+  },
+  "portfolio": {
+    "pageTitle": "Gallery",
+    "description": "A selection of Studio Mua projects: visual identities, content, and images that make an impression.",
+    "keywords": "Studio Mua portfolio, project gallery, graphic design, content creation, brand identity",
+    "imageAlt": "Studio Mua portfolio photo, project"
   },
   "manifestoSection": {
     "title": "Heya, I'm Cecilia!",

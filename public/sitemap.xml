@@ -82,4 +82,24 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/content-creator" />
   </url>
 
+  <!-- Portfolio IT -->
+  <url>
+    <loc>https://studiomuadesign.it/portfolio</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/portfolio" />
+  </url>
+
+  <!-- Portfolio EN -->
+  <url>
+    <loc>https://studiomuadesign.it/en/portfolio</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studiomuadesign.it/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://studiomuadesign.it/portfolio" />
+  </url>
+
 </urlset>

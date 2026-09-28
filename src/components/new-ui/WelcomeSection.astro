@@ -18,6 +18,12 @@ const t = translations.default;
     <p class="paragraph" set:html={t.welcomeSection.paragraph2}></p>
     <p class="paragraph" set:html={t.welcomeSection.paragraph3}></p>
     <h3 class="closing-title" set:html={t.welcomeSection.closingTitle}></h3>
+    <a
+      class="projects-button"
+      href={currentLocale === "en" ? "/en/portfolio/" : "/portfolio/"}
+    >
+      {t.welcomeSection.projectsCta}
+    </a>
     <SvgGreenArrow x="70%" y="93%" width="120px" rotateDeg={0} zIndex={1} />
     <div class="svg-text-home">
       {
@@ -133,6 +139,36 @@ const t = translations.default;
     font-size: 1.8rem;
     line-height: 1.3;
     font-weight: 600;
+  }
+
+  .projects-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 12px 24px;
+    border: 2px solid var(--brown);
+    border-radius: 3px;
+    color: var(--brown);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .projects-button:hover {
+    color: var(--white);
+    background-color: var(--brown);
+    transform: translateY(-2px);
+  }
+
+  .projects-button:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 4px;
   }
 
   @media (max-width: 768px) {

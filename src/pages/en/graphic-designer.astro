@@ -2,10 +2,10 @@
 import FormQuote from "../../components/FormQuote.astro";
 import InnerHeader from "../../components/InnerHeader.astro";
 import Footer from "../../components/new-ui/Footer.astro";
-import SvgGreenAsterisk from "../../components/SvgGreenAsterisk.astro";
-import SvgSwosh from "../../components/SvgSwosh.astro";
-import SvgBrandText from "../../components/SvgBrandText.astro";
-import SvgDoodle from "../../components/SvgDoodle.astro";
+// import SvgGreenAsterisk from "../../components/SvgGreenAsterisk.astro"; // adesivo nascosto su richiesta cliente
+// import SvgSwosh from "../../components/SvgSwosh.astro"; // adesivo nascosto su richiesta cliente
+// import SvgBrandText from "../../components/SvgBrandText.astro"; // adesivo nascosto su richiesta cliente
+// import SvgDoodle from "../../components/SvgDoodle.astro"; // adesivo nascosto su richiesta cliente
 import WhatYouNeedSection from "../../components/WhatYouNeedSection.astro";
 import Layout from "../../layouts/Layout.astro";
 import translations from "../../i18n/en.json";
@@ -19,22 +19,9 @@ import translations from "../../i18n/en.json";
 >
   <main>
     <InnerHeader title={translations.graphicDesigner.pageTitle} loopText="Design for people">
-      <!-- Desktop Version -->
-      <div slot="decorations" class="desktop-only">
-        <SvgBrandText
-          x="16%"
-          y="75%"
-          width="150px"
-          rotateDeg={15}
-          zIndex={-1}
-        />
-        <SvgDoodle x="78%" y="7%" rotateDeg={-20} zIndex={-1} />
-      </div>
-      <!-- Mobile & Tablet Version -->
-      <div slot="decorations" class="mobile-tablet-only">
-        <SvgBrandText x="4%" y="75%" width="100px" rotateDeg={15} zIndex={-1} />
-        <SvgDoodle x="74%" y="6%" rotateDeg={-20} zIndex={-1} width="70px" />
-      </div>
+      <!-- Adesivi nascosti su richiesta cliente -->
+      <div slot="decorations" class="desktop-only"></div>
+      <div slot="decorations" class="mobile-tablet-only"></div>
     </InnerHeader>
     <section class="text-section">
       <div class="text-container">

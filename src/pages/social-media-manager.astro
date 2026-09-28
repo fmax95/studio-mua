@@ -2,14 +2,14 @@
 import FormQuote from "../components/FormQuote.astro";
 import InnerHeader from "../components/InnerHeader.astro";
 import Footer from "../components/new-ui/Footer.astro";
-import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro";
-import SvgSwosh from "../components/SvgSwosh.astro";
-import SvgDoodle from "../components/SvgDoodle.astro";
-import SvgBrandLogo from "../components/SvgBrandLogo.astro";
+// import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro"; // adesivo nascosto su richiesta cliente
+// import SvgSwosh from "../components/SvgSwosh.astro"; // adesivo nascosto su richiesta cliente
+// import SvgDoodle from "../components/SvgDoodle.astro"; // adesivo nascosto su richiesta cliente
+// import SvgBrandLogo from "../components/SvgBrandLogo.astro"; // adesivo nascosto su richiesta cliente
 import WhatYouNeedSection from "../components/WhatYouNeedSection.astro";
 import Layout from "../layouts/Layout.astro";
 import translations from "../i18n/it.json";
-import SvgNowOrNever from "../components/SvgNowOrNever.astro";
+// import SvgNowOrNever from "../components/SvgNowOrNever.astro"; // adesivo nascosto su richiesta cliente
 ---
 
 <Layout
@@ -23,29 +23,9 @@ import SvgNowOrNever from "../components/SvgNowOrNever.astro";
       title={translations.socialMediaManager.pageTitle}
       loopText="Marketing is more than just an Instagram post"
     >
-      <!-- Desktop Version -->
-      <div slot="decorations" class="desktop-only">
-        <SvgDoodle x="16%" y="65%" rotateDeg={-15} zIndex={-1} />
-        <SvgNowOrNever
-          x="78%"
-          y="5%"
-          width="140px"
-          rotateDeg={10}
-          zIndex={-1}
-        />
-      </div>
-      <!-- Mobile & Tablet Version -->
-      <div slot="decorations" class="mobile-tablet-only">
-        <SvgDoodle x="4%" y="65%" rotateDeg={-15} zIndex={-1} width="70px" />
-        <SvgNowOrNever
-          x="72%"
-          y="5%"
-          width="140px"
-          rotateDeg={10}
-          zIndex={-1}
-          width="100px"
-        />
-      </div>
+      <!-- Adesivi nascosti su richiesta cliente -->
+      <div slot="decorations" class="desktop-only"></div>
+      <div slot="decorations" class="mobile-tablet-only"></div>
     </InnerHeader>
     <section class="text-section">
       <div class="text-container">

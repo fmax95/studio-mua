@@ -1,6 +1,6 @@
 ---
-import SvgItGirlEn from "../svg/SvgItGirlEn.astro";
-import SvgPinkArrowFlat from "../svg/SvgPinkArrowFlat.astro";
+// import SvgItGirlEn from "../svg/SvgItGirlEn.astro"; // adesivo nascosto su richiesta cliente
+// import SvgPinkArrowFlat from "../svg/SvgPinkArrowFlat.astro"; // adesivo nascosto su richiesta cliente
 
 // Locale & translations
 const currentLocale = Astro.currentLocale || "it";
@@ -10,29 +10,7 @@ const t = translations.default;
 
 <section class="manifesto-section">
   <div class="content-container">
-    <!-- Desktop -->
-    <div class="svg-desktop">
-      <SvgPinkArrowFlat
-        x="65%"
-        y="-18%"
-        width="100px"
-        rotateDeg={15}
-        zIndex={1}
-      />
-      <SvgItGirlEn x="70%" y="-33%" width="170px" rotateDeg={0} zIndex={1} />
-    </div>
-
-    <!-- Mobile/Tablet -->
-    <div class="svg-mobile">
-      <SvgPinkArrowFlat
-        x="48%"
-        y="-18%"
-        width="100px"
-        rotateDeg={15}
-        zIndex={1}
-      />
-      <SvgItGirlEn x="50%" y="-33%" width="170px" rotateDeg={0} zIndex={1} />
-    </div>
+    <!-- Adesivi nascosti su richiesta cliente (svg-desktop / svg-mobile) -->
     {
       t.manifestoSection.title && (
         <h2 class="manifesto-title">{t.manifestoSection.title}</h2>

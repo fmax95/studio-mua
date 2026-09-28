@@ -1,6 +1,6 @@
 ---
-import SvgGreenAsterisk from "../SvgGreenAsterisk.astro";
-import SvgCirclePinkLogo from "../svg/SvgCirclePinkLogo.astro";
+// import SvgGreenAsterisk from "../SvgGreenAsterisk.astro"; // adesivo nascosto su richiesta cliente
+// import SvgCirclePinkLogo from "../svg/SvgCirclePinkLogo.astro"; // adesivo nascosto su richiesta cliente
 
 // Locale & translations, following app pattern
 const currentLocale = Astro.currentLocale || "it";
@@ -10,13 +10,13 @@ const t = translations.default;
 
 <div class="header">
   <div class="header-content">
-    <SvgGreenAsterisk x="80%" y="40%" rotateDeg={15} zIndex={1} width="100px" />
-    <SvgCirclePinkLogo x="70%" y="103%" zIndex={1} width="100px" />
+    <!-- Adesivi nascosti su richiesta cliente -->
     <h3 class="intro-title">{t.homeHeader.introTitle}</h3>
     <h1 class="header-title">
       {t.homeHeader.headerTitle}
     </h1>
     <p class="header-subtitle">{t.homeHeader.subtitle}</p>
+    <a class="quote-cta" href="#form-preventivo">{t.homeHeader.quoteCta}</a>
   </div>
   <div class="white-bend">
     <div class="message-loop">
@@ -71,6 +71,24 @@ const t = translations.default;
     color: var(--brown);
     position: relative;
     z-index: 2;
+  }
+
+  .quote-cta {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: var(--brown);
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .quote-cta:hover {
+    opacity: 0.85;
   }
 </style>
 <style>

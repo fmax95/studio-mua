@@ -74,18 +74,10 @@ if (color === "pink") {
   <p class="card__body">{displayBody}</p>
 
   {
-    href ? (
+    href && (
       <a href={href} class={`card__cta ${ctaColorClass}`} style={ctaStyle}>
         {cta}
       </a>
-    ) : (
-      <button
-        class={`card__cta ${ctaColorClass}`}
-        type="button"
-        style={ctaStyle}
-      >
-        {cta}
-      </button>
     )
   }
 </article>

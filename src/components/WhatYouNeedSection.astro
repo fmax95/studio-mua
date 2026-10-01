@@ -1,6 +1,6 @@
 ---
-import SvgSwirl from "./SvgSwirl.astro";
-import SvgGreenAsterisk from "./SvgGreenAsterisk.astro";
+// import SvgSwirl from "./SvgSwirl.astro"; // adesivo nascosto su richiesta cliente
+// import SvgGreenAsterisk from "./SvgGreenAsterisk.astro"; // adesivo nascosto su richiesta cliente
 
 export interface Props {
   lang?: "it" | "en";
@@ -48,7 +48,6 @@ const content = {
     <div class="cards-grid">
       <!-- Card 1 - Beige with Swirl -->
       <div class="need-card card-beige swirl-card">
-        <SvgSwirl x="-15px" y="-15px" width="50px" height="50px" zIndex={2} color="var(--pink)" />
         <p class="card-text" set:html={content.cards[0].text}></p>
       </div>
 
@@ -65,13 +64,6 @@ const content = {
       <!-- Card 4 - Mint with Asterisk -->
       <div class="need-card card-mint asterisk-card">
         <p class="card-text" set:html={content.cards[3].text}></p>
-        <SvgGreenAsterisk
-          x="calc(100% - 25px)"
-          y="calc(100% - 25px)"
-          width="50px"
-          height="50px"
-          zIndex={2}
-        />
       </div>
     </div>
   </div>

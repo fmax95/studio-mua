@@ -2,13 +2,13 @@
 import FormQuote from "../components/FormQuote.astro";
 import InnerHeader from "../components/InnerHeader.astro";
 import Footer from "../components/new-ui/Footer.astro";
-import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro";
-import SvgSwosh from "../components/SvgSwosh.astro";
-import SvgDoodle from "../components/SvgDoodle.astro";
-import SvgBrandText from "../components/SvgBrandText.astro";
-import SvgNowOrNever from "../components/SvgNowOrNever.astro";
-import SvgStarCircle from "../components/SvgStarCircle.astro";
-import SvgSuperText from "../components/SvgSuperText.astro";
+// import SvgGreenAsterisk from "../components/SvgGreenAsterisk.astro"; // adesivo nascosto su richiesta cliente
+// import SvgSwosh from "../components/SvgSwosh.astro"; // adesivo nascosto su richiesta cliente
+// import SvgDoodle from "../components/SvgDoodle.astro"; // adesivo nascosto su richiesta cliente
+// import SvgBrandText from "../components/SvgBrandText.astro"; // adesivo nascosto su richiesta cliente
+// import SvgNowOrNever from "../components/SvgNowOrNever.astro"; // adesivo nascosto su richiesta cliente
+// import SvgStarCircle from "../components/SvgStarCircle.astro"; // adesivo nascosto su richiesta cliente
+// import SvgSuperText from "../components/SvgSuperText.astro"; // adesivo nascosto su richiesta cliente
 import WhatYouNeedSection from "../components/WhatYouNeedSection.astro";
 import Layout from "../layouts/Layout.astro";
 import translations from "../i18n/it.json";
@@ -25,27 +25,11 @@ import translations from "../i18n/it.json";
       title={translations.contentCreator.pageTitle}
       loopText="Tell a story"
     >
-      <!-- Desktop Version -->
-      <div slot="decorations" class="desktop-only">
-        <SvgDoodle x="78%" y="15%" rotateDeg={20} zIndex={-1} />
-
-        <SvgSuperText
-          x="16%"
-          y="75%"
-          width="150px"
-          rotateDeg={-8}
-          zIndex={-1}
-        />
-      </div>
-      <!-- Mobile & Tablet Version -->
-      <div slot="decorations" class="mobile-tablet-only">
-        <SvgDoodle x="74%" y="15%" rotateDeg={20} zIndex={-1} width="70px" />
-
-        <SvgSuperText x="4%" y="75%" width="100px" rotateDeg={-8} zIndex={-1} />
-      </div>
+      <!-- Adesivi nascosti su richiesta cliente -->
+      <div slot="decorations" class="desktop-only"></div>
+      <div slot="decorations" class="mobile-tablet-only"></div>
     </InnerHeader>
     <section class="text-section">
-      <SvgStarCircle x="79%" y="-8%" width="100px" rotateDeg={-15} zIndex={1} />
       <div class="text-container">
         <h2 class="text-block-title">
           {translations.contentCreator.sectionTitle}

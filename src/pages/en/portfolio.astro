@@ -1,0 +1,16 @@
+---
+import Footer from "../../components/new-ui/Footer.astro";
+import PortfolioGallery from "../../components/new-ui/PortfolioGallery.astro";
+import Layout from "../../layouts/Layout.astro";
+import translations from "../../i18n/en.json";
+---
+
+<Layout
+  title="Gallery | Studio Mua Portfolio"
+  description={translations.portfolio.description}
+  keywords={translations.portfolio.keywords}
+  lang="en"
+>
+  <PortfolioGallery />
+  <Footer />
+</Layout>

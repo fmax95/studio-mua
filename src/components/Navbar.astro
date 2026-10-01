@@ -26,6 +26,7 @@ const t = translations.default;
   <div class="upper">
     <a href={url.homepage}
       ><img
+        class="logo-img"
         src="/logo.svg"
         width={logoSize().width}
         height={logoSize().height}
@@ -42,19 +43,7 @@ const t = translations.default;
     <a class="nav-item" href={url.homepage} data-page="homepage"
       ><button>{t.nav.home}</button></a
     >
-    <a class="nav-item" href={url.graphicDesigner} data-page="graphic-designer">
-      <button>{t.nav.graphicDesigner}</button></a
-    >
-    <a class="nav-item" href={url.contentCreator} data-page="content-creator">
-      <button>{t.nav.contentCreator}</button></a
-    >
-    <a
-      class="nav-item"
-      href={url.socialMediaManager}
-      data-page="social-media-manager"
-    >
-      <button>{t.nav.socialMediaManager}</button></a
-    >
+    <!-- Voci menu pagine secondarie nascoste su richiesta cliente -->
     <div class="language-switcher-nav">
       <LanguageSwitcher />
     </div>
@@ -216,6 +205,11 @@ const t = translations.default;
       justify-content: space-between;
       padding: 3px 15px;
       border-top: 10px solid var(--blue);
+    }
+
+    .logo-img {
+      width: 80px;
+      height: 34px;
     }
 
     .upper {

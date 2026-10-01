@@ -14,9 +14,21 @@ const t = translations.default;
   <div class="content-container">
     <!-- Adesivo nascosto su richiesta cliente -->
     <h2 class="main-title">{t.welcomeSection.title}</h2>
-    <p class="paragraph" set:html={t.welcomeSection.paragraph1}></p>
-    <p class="paragraph" set:html={t.welcomeSection.paragraph2}></p>
-    <p class="paragraph" set:html={t.welcomeSection.paragraph3}></p>
+    {
+      t.welcomeSection.paragraph1 && (
+        <p class="paragraph" set:html={t.welcomeSection.paragraph1}></p>
+      )
+    }
+    {
+      t.welcomeSection.paragraph2 && (
+        <p class="paragraph" set:html={t.welcomeSection.paragraph2}></p>
+      )
+    }
+    {
+      t.welcomeSection.paragraph3 && (
+        <p class="paragraph" set:html={t.welcomeSection.paragraph3}></p>
+      )
+    }
     <h3 class="closing-title" set:html={t.welcomeSection.closingTitle}></h3>
     <a
       class="projects-button"

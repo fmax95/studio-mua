@@ -11,7 +11,7 @@ const t = translations.default;
 <div class="header">
   <div class="header-content">
     <!-- Adesivi nascosti su richiesta cliente -->
-    <h3 class="intro-title">{t.homeHeader.introTitle}</h3>
+    <h3 class="intro-title" set:html={t.homeHeader.introTitle}></h3>
     <h1 class="header-title">
       {t.homeHeader.headerTitle}
     </h1>
@@ -58,6 +58,10 @@ const t = translations.default;
     z-index: 2;
     margin-bottom: 20px;
     font-style: italic;
+  }
+
+  .highlight {
+    color: #fffaef;
   }
 
   .header-title {

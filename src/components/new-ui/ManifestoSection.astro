@@ -13,7 +13,7 @@ const t = translations.default;
     <!-- Adesivi nascosti su richiesta cliente (svg-desktop / svg-mobile) -->
     {
       t.manifestoSection.title && (
-        <h2 class="manifesto-title">{t.manifestoSection.title}</h2>
+        <h2 class="manifesto-title" set:html={t.manifestoSection.title}></h2>
       )
     }
     {
@@ -49,6 +49,10 @@ const t = translations.default;
     margin-bottom: 20px;
     line-height: 1.2;
     text-align: center;
+  }
+
+  .highlight {
+    color: #fffaef;
   }
 
   .manifesto-subtitle {

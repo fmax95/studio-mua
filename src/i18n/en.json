@@ -69,18 +69,18 @@
     "english": "English"
   },
   "homeHeader": {
-    "introTitle": "Your brand is ready for a five-star makeover",
+    "introTitle": "Is your brand hard to <span class=\"highlight\">forget</span>?",
     "headerTitle": "Transform your brand into a unique, cohesive, and impossible-to-ignore presence.",
     "subtitle": "In a market where everyone speaks, we make sure you're heard.",
     "scrollingText": "Marketing is thinking, not just posting.",
     "quoteCta": "Request a quote"
   },
   "welcomeSection": {
-    "title": "Welcome to Studio Mua",
-    "paragraph1": "Through a strategic combination of Social Media Management, professional Content Creation, and bespoke Graphic Design, we build an image that doesn't just work, it stands out.",
-    "paragraph2": "We believe every brand deserves a digital presence that reflects its personality, values, and ambitions. That's why we develop authentic content, carefully curated visuals, and communication designed to generate engagement, strengthen brand identity, and increase visibility.",
-    "paragraph3": "With Studio Mua, your brand doesn't simply become \"more beautiful\": it becomes immediate, recognizable, and capable of attracting the right attention. It's the ideal choice for those who want to truly stand out, establish a strong social media presence, and build an engaged, loyal community.",
-    "closingTitle": "Because today, being present isn't enough: you need to leave a mark.",
+    "title": "This is Studio Mua",
+    "paragraph1": "Your brand has something to say. We make sure it gets noticed. Strategy, social, content & graphic design: we build brands that are bold, recognisable and impossible to ignore.",
+    "paragraph2": "",
+    "paragraph3": "",
+    "closingTitle": "Because <strong>being online isn't enough. You need to leave a mark.</strong>",
     "ctaText": "WHERE I CAN HELP",
     "projectsCta": "Discover the projects"
   },
@@ -91,12 +91,12 @@
     "imageAlt": "Studio Mua portfolio photo, project"
   },
   "manifestoSection": {
-    "title": "Heya, I'm Cecilia!",
-    "subtitle": "I'm just a girl with ideas.",
-    "paragraph1": "I'm not here to follow trends — I'm here to create them.",
-    "paragraph2": "I design identities, shape imaginations, and turn shy brands into presences you can't ignore. I'm the one who sees first, imagines bigger, and brings it all to life with a style that doesn't ask for permission to exist.",
-    "paragraph3": "Graphics, content, socials, strategy — I take what you have and elevate it to places you never imagined, but where your brand truly belongs.",
-    "paragraph4": "In a world that moves fast, I grab attention. And I make it stay."
+    "title": "IDEAS, BY <span class=\"highlight\">CECILIA.</span>",
+    "subtitle": "Designer, creative thinker & brand builder.",
+    "paragraph1": "I like things that look good. And work even better.",
+    "paragraph2": "Branding, graphic design, social & content: aesthetics, ideas, and an almost obsessive attention to detail.",
+    "paragraph3": "Because beauty matters. And when it's truly yours, you can tell.",
+    "paragraph4": "If you want something you've seen before, you already have a thousand options. If you want something that's truly yours, let's talk."
   },
   "cardCarousel": {
     "title": "Our Vision",
@@ -151,7 +151,7 @@
     },
     "contentCreator": {
       "keywords": "Story • Idea",
-      "title": "Content creator",
+      "title": "Content Creator",
       "subtitle": "Let your visual tell a story",
       "text": "People don't buy from you. They buy from the story you tell about them.",
       "cta": "Learn more"

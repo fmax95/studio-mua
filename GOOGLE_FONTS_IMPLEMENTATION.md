@@ -1,4 +1,4 @@
-# Google Fonts Integration - Studio Mua
+# Google Fonts Integration - Studio Mua Site
 
 ## Implementazione Completata ✅
 
